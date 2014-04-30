@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_net_eyelock_sakila_domain_Customer" items="${customers}" z="mOH75Ra6tZiKVoIcoypLGSwX6vo=">
+        <table:table data="${customers}" id="l_net_eyelock_sakila_domain_Customer" path="/customers" typeIdFieldName="customerId" z="hQJzTWWQ9R2HKfiqoXUy+zp5zw0=">
+            <table:column id="c_net_eyelock_sakila_domain_Customer_addressId" property="addressId" z="Rn0IpM+I7Ck+dPnJGAx5q9aepZI="/>
+            <table:column id="c_net_eyelock_sakila_domain_Customer_storeId" property="storeId" z="RvtaPJO02s/RdlGM+9SNelbv19U="/>
+            <table:column id="c_net_eyelock_sakila_domain_Customer_firstName" property="firstName" z="z1p6IGBscXLPVqWkiIxcso7CKtM="/>
+            <table:column id="c_net_eyelock_sakila_domain_Customer_lastName" property="lastName" z="teZ3iJZfqNTH8ffdTaXdpwBXCEE="/>
+        </table:table>
+    </page:list>
+</div>

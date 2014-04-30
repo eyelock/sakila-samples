@@ -1,0 +1,16 @@
+<dl>
+    <dt>Address</dt>
+    <dd>{{item.address}}</dd>
+
+    <dt ng-if="item.address2 != null">Address 2</dt>
+    <dd ng-if="item.address2 != null">{{item.address2}}</dd>
+
+    <dt>District</dt>
+    <dd>{{item.district}}</dd>
+
+    <dt>City</dt>
+    <dd>{{item.cityId.city}}</dd>
+
+    <dt>Country</dt>
+    <dd>{{item.cityId.countryId.country}}</dd>
+</dl>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_net_eyelock_sakila_domain_Rental" items="${rentals}" z="JLF9dY0Pddn90reY4O/d2YEftxY=">
+        <table:table data="${rentals}" id="l_net_eyelock_sakila_domain_Rental" path="/rentals" typeIdFieldName="rentalId" z="y2+I3dfXB541MhlhWHW26b8bI9k=">
+            <table:column calendar="true" dateTimePattern="${rental_rentaldate_date_format}" id="c_net_eyelock_sakila_domain_Rental_rentalDate" property="rentalDate" z="Mbze4JwxvY/aRt8dROnyqNMfZx0="/>
+            <table:column calendar="true" dateTimePattern="${rental_returndate_date_format}" id="c_net_eyelock_sakila_domain_Rental_returnDate" property="returnDate" z="755g2q1V8OLxyWhCcwcdGmBSZgY="/>
+            <table:column id="c_net_eyelock_sakila_domain_Rental_staffId" property="staffId" z="3ikwI0iQl885tDw+KncLIP0yOOc="/>
+            <table:column id="c_net_eyelock_sakila_domain_Rental_inventoryId" property="inventoryId" z="vFoXHKNRuacSrsmx14C9eTegDao="/>
+            <table:column id="c_net_eyelock_sakila_domain_Rental_customerId" property="customerId" z="Ns7JOeP1OHnbOXvAJTs1Tw4dz78="/>
+        </table:table>
+    </page:list>
+</div>

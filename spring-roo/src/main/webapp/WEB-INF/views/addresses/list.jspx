@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_net_eyelock_sakila_domain_Address" items="${addresses}" z="rzxdjJnulMv82XR3mcQarjKKfuY=">
+        <table:table data="${addresses}" id="l_net_eyelock_sakila_domain_Address" path="/addresses" typeIdFieldName="addressId" z="sJS1hRhhz9Brm75t1XhCslRHfFQ=">
+            <table:column id="c_net_eyelock_sakila_domain_Address_cityId" property="cityId" z="kOQ+BDrUNC5MHIE47QZyAElAJno="/>
+            <table:column id="c_net_eyelock_sakila_domain_Address_address" property="address" z="wk2KtELaiRvQsUnxIjznNDs2m50="/>
+            <table:column id="c_net_eyelock_sakila_domain_Address_address2" property="address2" z="wict3Yw9By7YRrAf+RGIq8+fzfU="/>
+        </table:table>
+    </page:list>
+</div>

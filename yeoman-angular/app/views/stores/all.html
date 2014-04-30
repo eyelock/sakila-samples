@@ -1,0 +1,9 @@
+<div>
+    <h1>Stores</h1>
+    
+    <ul>
+        <li ng-repeat="store in stores.collection">
+          <a ng-href="#/stores/{{store.storeId}}">{{store.addressId.cityId.city}}, {{store.addressId.cityId.countryId.country}}</a>
+        </li>
+     </ul>
+</div>

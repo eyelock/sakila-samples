@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_net_eyelock_sakila_domain_Category" idField="categoryId" modelAttribute="category" path="/categories" versionField="none" z="CLq+nk50vqLRL22KgLaxL3lrR+A=">
+        <field:simple field="filmCategories" id="c_net_eyelock_sakila_domain_Category_filmCategories" messageCode="entity_reference_not_managed" messageCodeAttribute="Film Category" z="Qy4QNv3RrT03/UniWkkQLx34pPw="/>
+        <field:input field="name" id="c_net_eyelock_sakila_domain_Category_name" required="true" z="RQatDpz0Iqc0neNtM/e5Uts4nzg="/>
+        <field:datetime dateTimePattern="${category_lastupdate_date_format}" field="lastUpdate" id="c_net_eyelock_sakila_domain_Category_lastUpdate" required="true" z="rTfjNvpK25R/RUO6+phqeIxrCvI="/>
+    </form:update>
+</div>

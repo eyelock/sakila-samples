@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_net_eyelock_sakila_domain_Language" items="${languages}" z="10Ocf648Cn3f0YsENYgZdmFYoI0=">
+        <table:table data="${languages}" id="l_net_eyelock_sakila_domain_Language" path="/languages" typeIdFieldName="languageId" z="N6gTslF/fi7LldRnB0ztprGApag=">
+            <table:column id="c_net_eyelock_sakila_domain_Language_name" property="name" z="0YH922Jb6HRN1aowx8tJH2Na190="/>
+            <table:column calendar="true" dateTimePattern="${language_lastupdate_date_format}" id="c_net_eyelock_sakila_domain_Language_lastUpdate" property="lastUpdate" z="Plw9dO8CMrjMWJqyf+r+kEE13Ac="/>
+        </table:table>
+    </page:list>
+</div>

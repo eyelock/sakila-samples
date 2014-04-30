@@ -1,0 +1,9 @@
+<div>
+    <h1>Actors</h1>
+    
+    <ul>
+        <li ng-repeat="actor in actors.collection">
+          <a ng-href="#/actors/{{actor.actorId}}">{{actor.firstName}} {{actor.lastName}}</a>
+        </li>
+    </ul>
+</div>

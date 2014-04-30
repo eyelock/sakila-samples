@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_net_eyelock_sakila_domain_Staff" idField="staffId" modelAttribute="staff" path="/staff" versionField="none" z="kPyVUZPO1w2SmxjUBdPLW1Qr4hI=">
+        <field:simple field="payments" id="c_net_eyelock_sakila_domain_Staff_payments" messageCode="entity_reference_not_managed" messageCodeAttribute="Payment" z="YwtYTuYZmXn8k3264xOSi+jfqcE="/>
+        <field:simple field="rentals" id="c_net_eyelock_sakila_domain_Staff_rentals" messageCode="entity_reference_not_managed" messageCodeAttribute="Rental" z="vcqMwOPBO67904FdjUTxOhnAFaw="/>
+        <field:simple field="stores" id="c_net_eyelock_sakila_domain_Staff_stores" messageCode="entity_reference_not_managed" messageCodeAttribute="Store" z="nJtlyta2ldeGe/1MQV2yK/Bs2V4="/>
+        <field:select field="storeId" id="c_net_eyelock_sakila_domain_Staff_storeId" itemValue="storeId" items="${stores}" path="/stores" z="Vof01cbM4OIR7AvOVWDPNXYoHvY="/>
+        <field:select field="addressId" id="c_net_eyelock_sakila_domain_Staff_addressId" itemValue="addressId" items="${addresses}" path="/addresses" z="WLFol4xdNFAoFp+yENGwfA6r5rE="/>
+        <field:input field="firstName" id="c_net_eyelock_sakila_domain_Staff_firstName" required="true" z="R+g5EoCIYnNLtBERvKczQBJj+FQ="/>
+        <field:input field="lastName" id="c_net_eyelock_sakila_domain_Staff_lastName" required="true" z="zNSr4ZGqeTKXmZkSn6cncjbmmrg="/>
+        <field:input field="picture" id="c_net_eyelock_sakila_domain_Staff_picture" z="eY2+wNaivryxOkUh1fDY3V2Zt6c="/>
+        <field:input field="email" id="c_net_eyelock_sakila_domain_Staff_email" validationMessageCode="field_invalid_email" z="NxN2gbun6ujxPPp894dpqHI8wxk="/>
+        <field:checkbox field="active" id="c_net_eyelock_sakila_domain_Staff_active" z="nOqv8HxNxKl/KeASoNHk0pnE1z8="/>
+        <field:input field="username" id="c_net_eyelock_sakila_domain_Staff_username" required="true" z="lmCq7G7J3zvGbOlMPLb/ihRgtmA="/>
+        <field:input field="password" id="c_net_eyelock_sakila_domain_Staff_password" z="9QjIJHqkfs49C1jsm1M/vRFcnxU="/>
+        <field:datetime dateTimePattern="${staff_lastupdate_date_format}" field="lastUpdate" id="c_net_eyelock_sakila_domain_Staff_lastUpdate" required="true" z="mie7DmUM9quSXuvzaIbuoIo8Rk8="/>
+    </form:update>
+</div>

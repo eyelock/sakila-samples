@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_net_eyelock_sakila_domain_FilmCategory" object="${filmcategory}" path="/filmcategories" z="R2zVHC9BERDeLcifxuQo6mQKWqs=">
+        <field:display field="filmId" id="s_net_eyelock_sakila_domain_FilmCategory_filmId" object="${filmcategory}" z="2A13sYHbvuCHHWYUjs3TUCZ7Eh0="/>
+        <field:display field="categoryId" id="s_net_eyelock_sakila_domain_FilmCategory_categoryId" object="${filmcategory}" z="sj+8kbchYE6uK/NwnK4YjMieUMo="/>
+        <field:display calendar="true" dateTimePattern="${filmCategory_lastupdate_date_format}" field="lastUpdate" id="s_net_eyelock_sakila_domain_FilmCategory_lastUpdate" object="${filmcategory}" z="oa1SwHfiacjqEFEk+Zr9BQPbSEE="/>
+    </page:show>
+</div>

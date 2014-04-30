@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_net_eyelock_sakila_domain_Category" object="${category}" path="/categories" z="9OiAP+G11s9lfB7EyLIioNfv3Rg=">
+        <field:display field="name" id="s_net_eyelock_sakila_domain_Category_name" object="${category}" z="32MnBnIgPPWILSAqBrt+s80JAmA="/>
+        <field:display calendar="true" dateTimePattern="${category_lastupdate_date_format}" field="lastUpdate" id="s_net_eyelock_sakila_domain_Category_lastUpdate" object="${category}" z="7L3nyXrThUNHq9YQ3a3ed+y4fV4="/>
+    </page:show>
+</div>

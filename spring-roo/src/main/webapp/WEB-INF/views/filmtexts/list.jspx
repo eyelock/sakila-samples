@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_net_eyelock_sakila_domain_FilmText" items="${filmtexts}" z="0AB2x+8fWTasSOI2u07md38prJ4=">
+        <table:table data="${filmtexts}" id="l_net_eyelock_sakila_domain_FilmText" path="/filmtexts" typeIdFieldName="filmId" z="HiE19gcu1KE0pybJ60U6p37SwJk=">
+            <table:column id="c_net_eyelock_sakila_domain_FilmText_title" property="title" z="h9Z6nOwO+IFj26SJa1MCT4nIENA="/>
+            <table:column id="c_net_eyelock_sakila_domain_FilmText_description" property="description" z="taNPKiiQ5Cc4aubfgGCgPvfg1Yg="/>
+        </table:table>
+    </page:list>
+</div>

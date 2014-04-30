@@ -1,0 +1,140 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="yeomanAngularApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+      
+    <div class="header">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">Sakila Video Store</a>
+            </div>
+        
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a ng-href="#">Home</a></li>
+                    <li><a ng-href="#/films/new">New Films</a></li>
+                    <li><a ng-href="#/stores/all">Stores</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Browse <b class="caret"></b></a>    
+                        <ul class="dropdown-menu">
+                            <li><a ng-href="#/films/all">All Films</a></li>
+                            <li class="divider"></li>
+                            <li><a ng-href="#/categories/all">Categories</a></li>
+                            <li><a ng-href="#/actors/all">Actors</a></li>
+                            <li class="divider"></li>
+                            <li><a ng-href="#/films/search">Search</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>    
+                        <ul class="dropdown-menu">
+                            <li><a ng-href="#/account/details">Details</a></li>
+                            <li><a ng-href="#/account/rentals">Rentals</a></li>
+                            <li><a ng-href="#/account/history">History</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>    
+                        <ul class="dropdown-menu">
+                            <li><a ng-href="#/rentals/all">Rentals</a></li>
+                            <li><a ng-href="#/customers/all">Customers</a></li>
+                            <li><a ng-href="#/stores/all">Stores</a></li>
+                        </ul>
+                    </li>
+                    <li><a ng-href="#/authenticate/login">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Add your site or application content here -->
+    <div class="container">
+        <div ng-include="'views/alerts/page.html'"></div>
+    </div>
+     
+    <div class="container">
+        <div class="container" ng-view=""></div>
+    </div>    
+      
+    <div class="footer">
+      <p>&copy Whoever</p>
+    </div>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/films/new.js"></script>
+        <script src="scripts/controllers/films/search.js"></script>
+        <script src="scripts/controllers/films/all.js"></script>
+        <script src="scripts/services/films.js"></script>
+        <script src="scripts/controllers/films/detail.js"></script>
+        <script src="scripts/controllers/categories/all.js"></script>
+        <script src="scripts/controllers/categories/detail.js"></script>
+        <script src="scripts/services/categories.js"></script>
+        <script src="scripts/controllers/actors/all.js"></script>
+        <script src="scripts/controllers/actors/detail.js"></script>
+        <script src="scripts/services/actors.js"></script>
+        <script src="scripts/controllers/alerts/page.js"></script>
+        <script src="scripts/services/alerts.js"></script>
+        <script src="scripts/controllers/authenticate/login.js"></script>
+        <script src="scripts/controllers/authenticate/register.js"></script>
+        <script src="scripts/controllers/authenticate/logout.js"></script>
+        <script src="scripts/services/authenticate.js"></script>
+        <script src="scripts/controllers/stores/all.js"></script>
+        <script src="scripts/controllers/stores/detail.js"></script>
+        <script src="scripts/services/stores.js"></script>
+        <script src="scripts/controllers/stores/films.js"></script>
+        <script src="scripts/controllers/stores/customers.js"></script>
+        <script src="scripts/controllers/rentals/all.js"></script>
+        <script src="scripts/controllers/rentals/detail.js"></script>
+        <script src="scripts/controllers/rentals/films.js"></script>
+        <script src="scripts/controllers/rentals/customers.js"></script>
+        <script src="scripts/controllers/rentals/stores.js"></script>
+        <script src="scripts/services/rentals.js"></script>
+        <script src="scripts/controllers/customers/all.js"></script>
+        <script src="scripts/controllers/customers/detail.js"></script>
+        <script src="scripts/controllers/customers/rentals.js"></script>
+        <script src="scripts/services/customers.js"></script>
+        <!-- endbuild -->
+      
+      <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+      <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+</body>
+</html>

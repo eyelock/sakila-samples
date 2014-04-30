@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_net_eyelock_sakila_domain_City" object="${city}" path="/cities" z="VBpFi9hw/mqCzMCth9HoSwSVmBE=">
+        <field:display field="countryId" id="s_net_eyelock_sakila_domain_City_countryId" object="${city}" z="vIffJf6rcYXuSDfYqLRji8utamE="/>
+        <field:display field="city" id="s_net_eyelock_sakila_domain_City_city" object="${city}" z="zpDIRNps5lwpp/tbnnHALSzkhsY="/>
+        <field:display calendar="true" dateTimePattern="${city_lastupdate_date_format}" field="lastUpdate" id="s_net_eyelock_sakila_domain_City_lastUpdate" object="${city}" z="TH/ufYsjBosnMkubEn4j28PZl/k="/>
+    </page:show>
+</div>

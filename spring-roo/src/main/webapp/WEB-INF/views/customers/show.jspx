@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_net_eyelock_sakila_domain_Customer" object="${customer}" path="/customers" z="rhDOJ58Uq54EMy+iYydb67K8U8M=">
+        <field:display field="addressId" id="s_net_eyelock_sakila_domain_Customer_addressId" object="${customer}" z="t97jpAoh5tiXXcBM56bxiKMNBqs="/>
+        <field:display field="storeId" id="s_net_eyelock_sakila_domain_Customer_storeId" object="${customer}" z="PGFaQAgzDsr7nay7wcJYcv7fGRU="/>
+        <field:display field="firstName" id="s_net_eyelock_sakila_domain_Customer_firstName" object="${customer}" z="QfR1Jz1lCWcvjRQOw6rN4lkcQFY="/>
+        <field:display field="lastName" id="s_net_eyelock_sakila_domain_Customer_lastName" object="${customer}" z="Ye/iKyvY8HV3gb+dwJj4NI9TUmM="/>
+        <field:display field="email" id="s_net_eyelock_sakila_domain_Customer_email" object="${customer}" z="Fr4OsOw8IH9d5qdeHEOM9yAVKO0="/>
+        <field:display field="active" id="s_net_eyelock_sakila_domain_Customer_active" object="${customer}" z="sguoMvrjt5NV6TGO2zeX1p8144o="/>
+        <field:display calendar="true" dateTimePattern="${customer_createdate_date_format}" field="createDate" id="s_net_eyelock_sakila_domain_Customer_createDate" object="${customer}" z="ogrcCS7gDS8bhR5urzRfQG7oGBo="/>
+        <field:display calendar="true" dateTimePattern="${customer_lastupdate_date_format}" field="lastUpdate" id="s_net_eyelock_sakila_domain_Customer_lastUpdate" object="${customer}" z="+vUkcKX8dYVKGDsL0b0Bcl3p8I0="/>
+    </page:show>
+</div>

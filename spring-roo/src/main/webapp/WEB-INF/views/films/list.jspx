@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_net_eyelock_sakila_domain_Film" items="${films}" z="yyxKy/6CgE4O6B94wvE862qg8F4=">
+        <table:table data="${films}" id="l_net_eyelock_sakila_domain_Film" path="/films" typeIdFieldName="filmId" z="1aZeaGoOVOi+9afV1GvukOkmDkk=">
+            <table:column id="c_net_eyelock_sakila_domain_Film_languageId" property="languageId" z="qvCReGCfACclpNRGDww/QNS/JK4="/>
+            <table:column id="c_net_eyelock_sakila_domain_Film_originalLanguageId" property="originalLanguageId" z="lgu/5k3mPfbFC2VJcmBnKptaNvY="/>
+            <table:column id="c_net_eyelock_sakila_domain_Film_title" property="title" z="Ur6rRDHki1MMZM9S+Yid1OczGQg="/>
+            <table:column id="c_net_eyelock_sakila_domain_Film_description" property="description" z="n8OvU1Z/OLq/Cpj/Fpyspbhabns="/>
+            <table:column date="true" dateTimePattern="${film_releaseyear_date_format}" id="c_net_eyelock_sakila_domain_Film_releaseYear" property="releaseYear" z="CkHA6dIXMRtm5EBs2oOBnPZhABc="/>
+            <table:column id="c_net_eyelock_sakila_domain_Film_rentalDuration" property="rentalDuration" z="vkFjVj6Y7eqP/ki2XC4tbU6obzY="/>
+        </table:table>
+    </page:list>
+</div>

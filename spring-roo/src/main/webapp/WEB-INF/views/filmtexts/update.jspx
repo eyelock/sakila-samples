@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_net_eyelock_sakila_domain_FilmText" idField="filmId" modelAttribute="filmText" path="/filmtexts" versionField="none" z="SYwmOqxpyyA0HY3oT3tKOx/bMrU=">
+        <field:input field="title" id="c_net_eyelock_sakila_domain_FilmText_title" required="true" z="fymsaeqkWDfORWEalEP1JoO62Sc="/>
+        <field:input field="description" id="c_net_eyelock_sakila_domain_FilmText_description" z="7QrqRzksqIP0KmNAW0t10a/G3L0="/>
+    </form:update>
+</div>

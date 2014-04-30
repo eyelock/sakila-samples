@@ -1,0 +1,29 @@
+<div sakila-store-jumbotron="store"></div>
+
+<div class="container">
+    <div class="row">
+        <h2>Store Details</h>
+    </div>
+    
+    <div class="container">
+        <p>
+            <a href="#/stores/{{storeId}}/customers">Customers</a> | 
+            <a href="#/stores/{{storeId}}/films">Film Inventory</a> | 
+            <a href="#/rentals/stores/{{storeId}}">Rentals</a>
+        </p>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Address</h3>
+            
+            <dl sakila-address-dl="address"></dl>
+        </div>
+        
+        <div class="col-md-6">
+            <h3>Manager</h3>
+            
+            <dl sakila-staff-dl="staff"></dl>
+        </div>
+    </div>
+</div>

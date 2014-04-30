@@ -1,0 +1,55 @@
+<div class="jumbotron">
+    <h1>{{film.title}}</h1>
+
+    <p class="lead">
+        £{{film.rentalRate}}
+    </p>
+    
+    <p>{{film.description}}</p>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Details</h2>
+            
+            <dl>
+                <dt>Length</dt>
+                <dd>{{film.length}} minutes</dd>
+
+                <dt>Language</dt>
+                <dd>{{film.languageId.name}}</dd>
+
+                <dt>Rating</dt>
+                <dd>{{film.rating}}</dd>
+
+                <dt>Release Year</dt>
+                <dd>{{film.releaseYear}}</dd>
+
+                <dt>Special Features</dt>
+                <dd>{{film.specialFeatures}}</dd>
+            </dl>
+        </div>
+        
+        <div class="col-md-4">
+            <h2>Categories</h2>
+            
+            <ul>
+                <li ng-repeat="category in categories.collection">
+                  <a ng-href="#/categories/{{category.categoryId}}">{{category.name}}</a>
+                </li>
+             </ul>
+        </div>
+        
+        <div class="col-md-4">
+            <h2>Actors</h2>
+
+            <ul>
+                <li ng-repeat="actor in actors.collection">
+                  <a ng-href="#/actors/{{actor.actorId}}">{{actor.firstName}} {{actor.lastName}}</a>
+                </li>
+             </ul>
+        </div>
+    </div>
+</div>

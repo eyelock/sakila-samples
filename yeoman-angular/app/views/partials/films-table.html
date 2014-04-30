@@ -1,0 +1,27 @@
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Rating</th>
+        <th>Rental Rate</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="film in items.collection">
+        <td><a ng-href="#/films/{{film.filmId}}">{{film.title}}</a></td>
+        <td>{{film.description}}</td>
+        <td>{{film.rating}}</td>
+        <td>{{film.rentalRate}}</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="4">
+            <div ng-if="!((items.pageNumber * items.pageSize) == items.totalCount)">
+                <pagination total-items="items.totalCount" page="items.pageNumber" max-size="5" boundary-links="true" on-select-page="scope.onPaginate()"></pagination>
+            </div>
+        </td>    
+    </tr>
+    </tfoot>
+</table>

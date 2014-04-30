@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+        <menu:category id="c_filmcategory" z="Txv9h5U3v2PplhaDwqPgrq1uhbc=">
+            <menu:item id="i_filmcategory_new" messageCode="global_menu_new" url="/filmcategories?form" z="user-managed"/>
+            <menu:item id="i_filmcategory_list" messageCode="global_menu_list" url="/filmcategories?page=1&amp;size=${empty param.size ? 10 : param.size}" z="user-managed"/>
+        </menu:category>
+        <menu:category id="c_store" z="X6agb+2fI5TEX1XxLdy35do3GDw=">
+            <menu:item id="i_store_new" messageCode="global_menu_new" url="/stores?form" z="Vt7hKrPJoE2CsWghSjOTcY4uGG8="/>
+            <menu:item id="i_store_list" messageCode="global_menu_list" url="/stores?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Dbkmq2LBGNN0iglCHyLZUWyVNh0="/>
+        </menu:category>
+        <menu:category id="c_language" z="Vmkl0xtqK+Ud4uzTgDDr52kU7Oo=">
+            <menu:item id="i_language_new" messageCode="global_menu_new" url="/languages?form" z="9yc3RoivxaGEpXsFAuD43cOPbXo="/>
+            <menu:item id="i_language_list" messageCode="global_menu_list" url="/languages?page=1&amp;size=${empty param.size ? 10 : param.size}" z="ElqbZy+53HRFVQ8s2jdG81J9A5w="/>
+        </menu:category>
+        <menu:category id="c_city" z="4hVKAkWoLVM4Da06LymSga9Sizg=">
+            <menu:item id="i_city_new" messageCode="global_menu_new" url="/cities?form" z="user-managed"/>
+            <menu:item id="i_city_list" messageCode="global_menu_list" url="/cities?page=1&amp;size=${empty param.size ? 10 : param.size}" z="user-managed"/>
+        </menu:category>
+        <menu:category id="c_category" z="kY676wLbZKc59UbcUGM8ogjOGOc=">
+            <menu:item id="i_category_new" messageCode="global_menu_new" url="/categories?form" z="user-managed"/>
+            <menu:item id="i_category_list" messageCode="global_menu_list" url="/categories?page=1&amp;size=${empty param.size ? 10 : param.size}" z="user-managed"/>
+        </menu:category>
+        <menu:category id="c_address" z="my5R1aInTRohGzWz9TL4j8LX/vE=">
+            <menu:item id="i_address_new" messageCode="global_menu_new" url="/addresses?form" z="vg+UZ0neKcizSzKiVzXeI3oY1BA="/>
+            <menu:item id="i_address_list" messageCode="global_menu_list" url="/addresses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="u8ooCATbc0N+VHl1spo80t0zy+k="/>
+        </menu:category>
+        <menu:category id="c_inventory" z="dpXK3aH5NiHnKowdp9T2TJGiUTA=">
+            <menu:item id="i_inventory_new" messageCode="global_menu_new" url="/inventories?form" z="user-managed"/>
+            <menu:item id="i_inventory_list" messageCode="global_menu_list" url="/inventories?page=1&amp;size=${empty param.size ? 10 : param.size}" z="user-managed"/>
+        </menu:category>
+        <menu:category id="c_customer" z="Wa+bVSiDyYo/wX1nGU1B/z+OKhE=">
+            <menu:item id="i_customer_new" messageCode="global_menu_new" url="/customers?form" z="d9+YIotZHp6KZLGKwwnMVzPvh8k="/>
+            <menu:item id="i_customer_list" messageCode="global_menu_list" url="/customers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Yo9cUtyc7EUvbxwQ7EoeqXWaVJM="/>
+        </menu:category>
+        <menu:category id="c_filmactor" z="ASC09VXyrnaRqhupT5m4qks48+Y=">
+            <menu:item id="i_filmactor_new" messageCode="global_menu_new" url="/filmactors?form" z="JJy+L+3Y9KXgdTLrX2G5cHgRg5E="/>
+            <menu:item id="i_filmactor_list" messageCode="global_menu_list" url="/filmactors?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Dg6UsTY/hpVK7ijj0qyDlKfgGsk="/>
+        </menu:category>
+        <menu:category id="c_country" z="+9IFFFqXHr5bWdYjx7upDibmQfo=">
+            <menu:item id="i_country_new" messageCode="global_menu_new" url="/countries?form" z="user-managed"/>
+            <menu:item id="i_country_list" messageCode="global_menu_list" url="/countries?page=1&amp;size=${empty param.size ? 10 : param.size}" z="user-managed"/>
+        </menu:category>
+        <menu:category id="c_film" z="PhAwcsmbTfnmiKwecEUsbpTXAoY=">
+            <menu:item id="i_film_new" messageCode="global_menu_new" url="/films?form" z="MXRmFuMX7EhZ3uxhIxPFI6N95q4="/>
+            <menu:item id="i_film_list" messageCode="global_menu_list" url="/films?page=1&amp;size=${empty param.size ? 10 : param.size}" z="rBidMP01TJmPattO4VMqSZgvtjA="/>
+        </menu:category>
+        <menu:category id="c_actor" z="xNiamAhJnfonrV3pdEwEDkjjcR4=">
+            <menu:item id="i_actor_new" messageCode="global_menu_new" url="/actors?form" z="E6n7Tt6Uqh7IXYPOEt6YiZ2ls50="/>
+            <menu:item id="i_actor_list" messageCode="global_menu_list" url="/actors?page=1&amp;size=${empty param.size ? 10 : param.size}" z="dNicHM2M6gi4d//n8j7oLpDM6ak="/>
+        </menu:category>
+        <menu:category id="c_payment" z="KXvP3nk7swdtwqF1yirxi8G+72w=">
+            <menu:item id="i_payment_new" messageCode="global_menu_new" url="/payments?form" z="MsWgEk8mPOMZsZrpSmZ4EEiRzKQ="/>
+            <menu:item id="i_payment_list" messageCode="global_menu_list" url="/payments?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Z3RAJMV3OotiyNAbiUB5cNixuyY="/>
+        </menu:category>
+        <menu:category id="c_rental" z="6kkyfPDsgsc8wWeFxnHS68d9CKA=">
+            <menu:item id="i_rental_new" messageCode="global_menu_new" url="/rentals?form" z="tXGwaFbzPDGfc49VpnJlg0luMvk="/>
+            <menu:item id="i_rental_list" messageCode="global_menu_list" url="/rentals?page=1&amp;size=${empty param.size ? 10 : param.size}" z="yeG5rMjNEffDblabM8Y0ulofJnk="/>
+        </menu:category>
+        <menu:category id="c_staff" z="WEqNUFcSQYoW/mQULTlPjM/nWNU=">
+            <menu:item id="i_staff_new" messageCode="global_menu_new" url="/staff?form" z="user-managed"/>
+            <menu:item id="i_staff_list" messageCode="global_menu_list" url="/staff?page=1&amp;size=${empty param.size ? 10 : param.size}" z="user-managed"/>
+        </menu:category>
+        <menu:category id="c_filmtext" z="EfDktDLlI2vE2NsTUTNQk7wYaj4=">
+            <menu:item id="i_filmtext_new" messageCode="global_menu_new" url="/filmtexts?form" z="3lwZa+cj/fmpJe00L8NFS9ULRcI="/>
+            <menu:item id="i_filmtext_list" messageCode="global_menu_list" url="/filmtexts?page=1&amp;size=${empty param.size ? 10 : param.size}" z="78wmqgLeeOHfNPfGgbefpfQQxp4="/>
+        </menu:category>
+    </menu:menu>
+</div>

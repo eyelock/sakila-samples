@@ -1,0 +1,63 @@
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-04-22 22:39:11
+hint
+project --topLevelPackage net.eyelock.sakila
+hint
+jpa setup --provider HIBERNATE --database MYSQL
+hint
+database reverse engineer --schema no-schema-required 
+database reverse engineer --schema no-schema-required --package ~.domain
+database reverse engineer --schema no-schema-required --package ~.domain
+database reverse engineer --package ~.domain --schema no-schema-required
+exit
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log closed at 2014-04-22 23:16:13
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-04-22 23:16:25
+database reverse engineer --schema no-schema-required --package ~.domain --testAutomatically 
+web mvc setup
+web mvc all  --package ~.web
+web mvc json all
+json all
+service all --interfacePackage net.eyelock.sakila.services
+security setup
+exit
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log closed at 2014-04-22 23:30:06
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-04-22 23:50:23
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-04-23 12:00:05
+focus --class ~.domain.Customer
+finder list
+finder add --finderName findCustomersByEmailLike
+focus --class ~.domain.Staff
+finder list
+finder add --finderName findStaffByUsernameEquals
+finder add --finderName findStaffsByUsernameEquals
+focus --class ~.domain.Customer
+finder add --finderName findCustomersByEmailEquals
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-04-23 20:22:13
+// [failed] repository jpa --interface ~.repositories.ActorRepository --entity 
+repository jpa --interface ~.repositories.ActorRepository --entity ~.domain.Actor
+repository jpa --interface ~.repositories.AddressRepository --entity ~.domain.Address
+repository jpa --interface ~.repositories.StoreRepository --entity ~.domain.Store
+repository jpa --interface ~.repositories.StaffRepository --entity ~.domain.Staff
+repository jpa --interface ~.repositories.PaymentRepository --entity ~.domain.Payment
+repository jpa --interface ~.repositories.InventoryRepository --entity ~.domain.Inventory
+repository jpa --interface ~.repositories.FilmTextRepository --entity ~.domain.FilmText
+repository jpa --interface ~.repositories.LanguageRepository --entity ~.domain.Language
+repository jpa --interface ~.repositories.FilmCategoryRepository --entity ~.domain.FilmCategory
+repository jpa --interface ~.repositories.CategoryRepository --entity ~.domain.Category
+repository jpa --interface ~.repositories.FilmRepository --entity ~.domain.Film
+repository jpa --interface ~.repositories.FilmActorRepository --entity ~.domain.FilmActor
+repository jpa --interface ~.repositories.PaymentRepository --entity ~.domain.Payment
+repository jpa --interface ~.repositories.cityRepository --entity ~.domain.City
+repository jpa --interface ~.repositories.CustomerRepository --entity ~.domain.Customer
+repository jpa --interface ~.repositories.CountryRepository --entity ~.domain.Country
+repository jpa --interface ~.repositories.FilmRepository --entity ~.domain.Film
+repository jpa --interface ~.repositories.RentalRepository --entity ~.domain.Rental
+web mvc json all
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-04-24 20:10:02
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-04-27 20:13:49
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-04-27 20:36:20
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-04-28 10:32:55
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-04-28 16:24:53
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-04-28 19:54:37
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-04-29 12:28:03
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-04-29 16:48:06
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-04-29 20:13:59

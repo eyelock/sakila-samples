@@ -1,0 +1,29 @@
+<table>
+    <thead>
+    <tr>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>City</th>
+        <th>Country</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in items.collection">
+        <td><a ng-href="#/customers/{{item.customerId}}">{{item.lastName}}</a></td>
+        <td>{{item.firstName}}</td>
+        <td>{{item.addressId.cityId.city}}</td>
+        <td>{{item.addressId.cityId.countryId.country}}</td>
+        <td>{{item.email}}</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="4">
+            <div ng-if="!((items.pageNumber * items.pageSize) == items.totalCount)">
+                <pagination total-items="items.totalCount" page="items.pageNumber" max-size="5" boundary-links="true" on-select-page="paginateResults(page)"></pagination>
+            </div>
+        </td>    
+    </tr>
+    </tfoot>
+</table>

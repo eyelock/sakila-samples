@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_net_eyelock_sakila_domain_Language" idField="languageId" modelAttribute="language" path="/languages" versionField="none" z="m3lbVJPUmKpkOj6MGB6nGlwowJk=">
+        <field:simple field="films" id="c_net_eyelock_sakila_domain_Language_films" messageCode="entity_reference_not_managed" messageCodeAttribute="Film" z="Dw7ahm6UA2r839g0okaevRlsi38="/>
+        <field:simple field="films1" id="c_net_eyelock_sakila_domain_Language_films1" messageCode="entity_reference_not_managed" messageCodeAttribute="Film" z="iTzCsnYL7frfNPbWkYFOcrD+4tg="/>
+        <field:input field="name" id="c_net_eyelock_sakila_domain_Language_name" required="true" z="nYylyuHb0tk24a1HAQfXZ90olvY="/>
+        <field:datetime dateTimePattern="${language_lastupdate_date_format}" field="lastUpdate" id="c_net_eyelock_sakila_domain_Language_lastUpdate" required="true" z="IkHTUT4VQwTT6zH8ohhyEbZ9BQg="/>
+    </form:update>
+</div>

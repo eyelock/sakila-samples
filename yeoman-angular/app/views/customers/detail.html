@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <h2>Customer Details</h>
+    </div>
+    
+    <div class="container">
+        <p>
+            <a href="#/customers/{{customer.customerId}}/rentals">Rentals</a>
+        </p>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Details</h3>
+            
+            <dl>
+                <dt>Name</dt>
+                <dd>{{customer.firstName}} {{customer.lastName}}</dd>
+                
+                <dt>Email</dt>
+                <dd>{{customer.email}}</dd>
+                
+                <dt>Enabled</dt>
+                <dd>{{customer.enabled}}</dd>
+                
+                <dt>Active</dt>
+                <dd>{{customer.active}}</dd>
+                
+                <dt>Account Not Locked</dt>
+                <dd>{{customer.accountNonLocked}}</dd>
+                
+                <dt>Credentials Not Expired</dt>
+                <dd>{{customer.credentialsNonExpired}}</dd>
+            </dl>
+        </div>
+        
+        <div class="col-md-6">
+            <h3>Address</h3>
+            
+            <dl sakila-address-dl="address"></dl>
+        </div>
+    </div>
+</div>
