@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <page:list id="pl_net_eyelock_sakila_domain_Inventory" items="${inventorys}" z="+tRKWJz2VbPHd0DT8cYsGSCSZ6U=">
-        <table:table data="${inventorys}" id="l_net_eyelock_sakila_domain_Inventory" path="/inventories" typeIdFieldName="inventoryId" z="36a8wg266QP+B3B6JnzE5cNKIFM=">
-            <table:column id="c_net_eyelock_sakila_domain_Inventory_storeId" property="storeId" z="AGBmn+01XJyR92gkq3MA0/V87CY="/>
-            <table:column id="c_net_eyelock_sakila_domain_Inventory_filmId" property="filmId" z="9aZgo9WQ5IvcQJHAMh92w6na2Gs="/>
-            <table:column calendar="true" dateTimePattern="${inventory_lastupdate_date_format}" id="c_net_eyelock_sakila_domain_Inventory_lastUpdate" property="lastUpdate" z="s1UndB8GQkA5AAISDG87s++0LVw="/>
-        </table:table>
-    </page:list>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form"
+	xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<page:list id="pl_net_eyelock_sakila_domain_Inventory"
+		items="${inventorys}" z="+tRKWJz2VbPHd0DT8cYsGSCSZ6U=">
+		<table:table data="${inventorys}"
+			id="l_net_eyelock_sakila_domain_Inventory" path="/inventories"
+			typeIdFieldName="inventoryId" z="36a8wg266QP+B3B6JnzE5cNKIFM=">
+			<table:column id="c_net_eyelock_sakila_domain_Inventory_storeId"
+				property="storeId" z="AGBmn+01XJyR92gkq3MA0/V87CY=" />
+			<table:column id="c_net_eyelock_sakila_domain_Inventory_filmId"
+				property="filmId" z="9aZgo9WQ5IvcQJHAMh92w6na2Gs=" />
+			<table:column calendar="true"
+				dateTimePattern="${inventory_lastupdate_date_format}"
+				id="c_net_eyelock_sakila_domain_Inventory_lastUpdate"
+				property="lastUpdate" z="s1UndB8GQkA5AAISDG87s++0LVw=" />
+		</table:table>
+	</page:list>
 </div>

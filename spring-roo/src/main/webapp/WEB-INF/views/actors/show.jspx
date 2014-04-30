@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_net_eyelock_sakila_domain_Actor" object="${actor}" path="/actors" z="IhVJzIvemVaodo9dBE1Nu90toZk=">
-        <field:display field="firstName" id="s_net_eyelock_sakila_domain_Actor_firstName" object="${actor}" z="1Uo9PElLOLrw2S/frltuyT7sDA8="/>
-        <field:display field="lastName" id="s_net_eyelock_sakila_domain_Actor_lastName" object="${actor}" z="3QI1tAyiQpkGm/hthFEmtUO8ZfI="/>
-        <field:display calendar="true" dateTimePattern="${actor_lastupdate_date_format}" field="lastUpdate" id="s_net_eyelock_sakila_domain_Actor_lastUpdate" object="${actor}" z="zrWx/d9/JgHVqdGP6erY1F6PSwM="/>
-    </page:show>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<page:show id="ps_net_eyelock_sakila_domain_Actor" object="${actor}"
+		path="/actors" z="IhVJzIvemVaodo9dBE1Nu90toZk=">
+		<field:display field="firstName"
+			id="s_net_eyelock_sakila_domain_Actor_firstName" object="${actor}"
+			z="1Uo9PElLOLrw2S/frltuyT7sDA8=" />
+		<field:display field="lastName"
+			id="s_net_eyelock_sakila_domain_Actor_lastName" object="${actor}"
+			z="3QI1tAyiQpkGm/hthFEmtUO8ZfI=" />
+		<field:display calendar="true"
+			dateTimePattern="${actor_lastupdate_date_format}" field="lastUpdate"
+			id="s_net_eyelock_sakila_domain_Actor_lastUpdate" object="${actor}"
+			z="zrWx/d9/JgHVqdGP6erY1F6PSwM=" />
+	</page:show>
 </div>

@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_net_eyelock_sakila_domain_Store" object="${store}" path="/stores" z="2Y2kP4M2H9VEF2kF/oB227tKu3U=">
-        <field:display field="managerStaffId" id="s_net_eyelock_sakila_domain_Store_managerStaffId" object="${store}" z="M9poevVggpoHXBvkwl3CB9dy3GE="/>
-        <field:display field="addressId" id="s_net_eyelock_sakila_domain_Store_addressId" object="${store}" z="V11mchOdxYdHFJiN4fm4Baht94E="/>
-        <field:display calendar="true" dateTimePattern="${store_lastupdate_date_format}" field="lastUpdate" id="s_net_eyelock_sakila_domain_Store_lastUpdate" object="${store}" z="UyJqD//qyskhZjCeclV4Cg7zhHg="/>
-        <field:display field="appFactory" id="s_net_eyelock_sakila_domain_Store_appFactory" object="${store}" z="zOqdoZM4D1Gx2TBqgAd0EERLA8Q="/>
-    </page:show>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<page:show id="ps_net_eyelock_sakila_domain_Store" object="${store}"
+		path="/stores" z="2Y2kP4M2H9VEF2kF/oB227tKu3U=">
+		<field:display field="managerStaffId"
+			id="s_net_eyelock_sakila_domain_Store_managerStaffId"
+			object="${store}" z="M9poevVggpoHXBvkwl3CB9dy3GE=" />
+		<field:display field="addressId"
+			id="s_net_eyelock_sakila_domain_Store_addressId" object="${store}"
+			z="V11mchOdxYdHFJiN4fm4Baht94E=" />
+		<field:display calendar="true"
+			dateTimePattern="${store_lastupdate_date_format}" field="lastUpdate"
+			id="s_net_eyelock_sakila_domain_Store_lastUpdate" object="${store}"
+			z="UyJqD//qyskhZjCeclV4Cg7zhHg=" />
+		<field:display field="appFactory"
+			id="s_net_eyelock_sakila_domain_Store_appFactory" object="${store}"
+			z="zOqdoZM4D1Gx2TBqgAd0EERLA8Q=" />
+	</page:show>
 </div>

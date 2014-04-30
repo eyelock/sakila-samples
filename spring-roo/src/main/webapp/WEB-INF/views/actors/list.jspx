@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <page:list id="pl_net_eyelock_sakila_domain_Actor" items="${actors}" z="sxwZt25ztLNAUbI96U7ZkQwopnU=">
-        <table:table data="${actors}" id="l_net_eyelock_sakila_domain_Actor" path="/actors" typeIdFieldName="actorId" z="OMHuzoJOHp4fiNi3fkLig2bIF5s=">
-            <table:column id="c_net_eyelock_sakila_domain_Actor_firstName" property="firstName" z="lruAf4CU8L/JE3+gpzib/De3B+8="/>
-            <table:column id="c_net_eyelock_sakila_domain_Actor_lastName" property="lastName" z="h4OIAspS1lni7y54JbG8hmons0Q="/>
-            <table:column calendar="true" dateTimePattern="${actor_lastupdate_date_format}" id="c_net_eyelock_sakila_domain_Actor_lastUpdate" property="lastUpdate" z="nD5HCqo/4n22vgBtCTnLj8qmCbI="/>
-        </table:table>
-    </page:list>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form"
+	xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<page:list id="pl_net_eyelock_sakila_domain_Actor" items="${actors}"
+		z="sxwZt25ztLNAUbI96U7ZkQwopnU=">
+		<table:table data="${actors}" id="l_net_eyelock_sakila_domain_Actor"
+			path="/actors" typeIdFieldName="actorId"
+			z="OMHuzoJOHp4fiNi3fkLig2bIF5s=">
+			<table:column id="c_net_eyelock_sakila_domain_Actor_firstName"
+				property="firstName" z="lruAf4CU8L/JE3+gpzib/De3B+8=" />
+			<table:column id="c_net_eyelock_sakila_domain_Actor_lastName"
+				property="lastName" z="h4OIAspS1lni7y54JbG8hmons0Q=" />
+			<table:column calendar="true"
+				dateTimePattern="${actor_lastupdate_date_format}"
+				id="c_net_eyelock_sakila_domain_Actor_lastUpdate"
+				property="lastUpdate" z="nD5HCqo/4n22vgBtCTnLj8qmCbI=" />
+		</table:table>
+	</page:list>
 </div>

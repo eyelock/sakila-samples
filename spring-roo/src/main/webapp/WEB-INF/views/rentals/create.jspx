@@ -1,15 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <form:create id="fc_net_eyelock_sakila_domain_Rental" modelAttribute="rental" path="/rentals" render="${empty dependencies}" z="tjBgSRbjxDnwp76uTdpGdqyi/z8=">
-        <field:datetime dateTimePattern="${rental_rentaldate_date_format}" field="rentalDate" id="c_net_eyelock_sakila_domain_Rental_rentalDate" required="true" z="zzrfkxI5QmT8Ykh+53Izp+Yp0S0="/>
-        <field:datetime dateTimePattern="${rental_returndate_date_format}" field="returnDate" id="c_net_eyelock_sakila_domain_Rental_returnDate" z="1ZBmoX7zl5lCqZDPRJp5hSzslWE="/>
-        <field:datetime dateTimePattern="${rental_lastupdate_date_format}" field="lastUpdate" id="c_net_eyelock_sakila_domain_Rental_lastUpdate" required="true" z="+YoyvGY+QOTUvIUZ4NWCJJNGY1E="/>
-        <field:simple field="payments" id="c_net_eyelock_sakila_domain_Rental_payments" messageCode="entity_reference_not_managed" messageCodeAttribute="Payment" z="A7DYOq+Guimm147Uugp38TbR1BE="/>
-        <field:select field="staffId" id="c_net_eyelock_sakila_domain_Rental_staffId" itemValue="staffId" items="${staffs}" path="/staff" z="w2+qdLZ5jmuGJPdAlGEwuSo9RUs="/>
-        <field:select field="inventoryId" id="c_net_eyelock_sakila_domain_Rental_inventoryId" itemValue="inventoryId" items="${inventorys}" path="/inventories" z="4pB9BS8G2CCTtRf66yrw7RrQBcI="/>
-        <field:select field="customerId" id="c_net_eyelock_sakila_domain_Rental_customerId" itemValue="customerId" items="${customers}" path="/customers" z="gpDvcp69nVzOfsPELOFb5uYbdpg="/>
-    </form:create>
-    <form:dependency dependencies="${dependencies}" id="d_net_eyelock_sakila_domain_Rental" render="${not empty dependencies}" z="yUobHFzm6/2oGQoDWAfkk4KCt1s="/>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields"
+	xmlns:form="urn:jsptagdir:/WEB-INF/tags/form"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:spring="http://www.springframework.org/tags" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<form:create id="fc_net_eyelock_sakila_domain_Rental"
+		modelAttribute="rental" path="/rentals" render="${empty dependencies}"
+		z="tjBgSRbjxDnwp76uTdpGdqyi/z8=">
+		<field:datetime dateTimePattern="${rental_rentaldate_date_format}"
+			field="rentalDate" id="c_net_eyelock_sakila_domain_Rental_rentalDate"
+			required="true" z="zzrfkxI5QmT8Ykh+53Izp+Yp0S0=" />
+		<field:datetime dateTimePattern="${rental_returndate_date_format}"
+			field="returnDate" id="c_net_eyelock_sakila_domain_Rental_returnDate"
+			z="1ZBmoX7zl5lCqZDPRJp5hSzslWE=" />
+		<field:datetime dateTimePattern="${rental_lastupdate_date_format}"
+			field="lastUpdate" id="c_net_eyelock_sakila_domain_Rental_lastUpdate"
+			required="true" z="+YoyvGY+QOTUvIUZ4NWCJJNGY1E=" />
+		<field:simple field="payments"
+			id="c_net_eyelock_sakila_domain_Rental_payments"
+			messageCode="entity_reference_not_managed"
+			messageCodeAttribute="Payment" z="A7DYOq+Guimm147Uugp38TbR1BE=" />
+		<field:select field="staffId"
+			id="c_net_eyelock_sakila_domain_Rental_staffId" itemValue="staffId"
+			items="${staffs}" path="/staff" z="w2+qdLZ5jmuGJPdAlGEwuSo9RUs=" />
+		<field:select field="inventoryId"
+			id="c_net_eyelock_sakila_domain_Rental_inventoryId"
+			itemValue="inventoryId" items="${inventorys}" path="/inventories"
+			z="4pB9BS8G2CCTtRf66yrw7RrQBcI=" />
+		<field:select field="customerId"
+			id="c_net_eyelock_sakila_domain_Rental_customerId"
+			itemValue="customerId" items="${customers}" path="/customers"
+			z="gpDvcp69nVzOfsPELOFb5uYbdpg=" />
+	</form:create>
+	<form:dependency dependencies="${dependencies}"
+		id="d_net_eyelock_sakila_domain_Rental"
+		render="${not empty dependencies}" z="yUobHFzm6/2oGQoDWAfkk4KCt1s=" />
 </div>

@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <form:create id="fc_net_eyelock_sakila_domain_Inventory" modelAttribute="inventory" path="/inventories" render="${empty dependencies}" z="P3VbuWliLll9ipHNCLTq9Pjvods=">
-        <field:simple field="rentals" id="c_net_eyelock_sakila_domain_Inventory_rentals" messageCode="entity_reference_not_managed" messageCodeAttribute="Rental" z="cFXBEEtpmzER3HMWiUzdQenCECE="/>
-        <field:select field="storeId" id="c_net_eyelock_sakila_domain_Inventory_storeId" itemValue="storeId" items="${stores}" path="/stores" z="W3JsGjKU85xmlaqTGTBFeflyAoU="/>
-        <field:select field="filmId" id="c_net_eyelock_sakila_domain_Inventory_filmId" itemValue="filmId" items="${films}" path="/films" z="MBSKsQ6OAmBlXOgq+C6eHZM9Sq0="/>
-        <field:datetime dateTimePattern="${inventory_lastupdate_date_format}" field="lastUpdate" id="c_net_eyelock_sakila_domain_Inventory_lastUpdate" required="true" z="9BuGq8y/ZJ6kUrDLRfjXRXNjA+4="/>
-    </form:create>
-    <form:dependency dependencies="${dependencies}" id="d_net_eyelock_sakila_domain_Inventory" render="${not empty dependencies}" z="Cqpise1noRrWdVGaFk/rCbDQrx4="/>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields"
+	xmlns:form="urn:jsptagdir:/WEB-INF/tags/form"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:spring="http://www.springframework.org/tags" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<form:create id="fc_net_eyelock_sakila_domain_Inventory"
+		modelAttribute="inventory" path="/inventories"
+		render="${empty dependencies}" z="P3VbuWliLll9ipHNCLTq9Pjvods=">
+		<field:simple field="rentals"
+			id="c_net_eyelock_sakila_domain_Inventory_rentals"
+			messageCode="entity_reference_not_managed"
+			messageCodeAttribute="Rental" z="cFXBEEtpmzER3HMWiUzdQenCECE=" />
+		<field:select field="storeId"
+			id="c_net_eyelock_sakila_domain_Inventory_storeId"
+			itemValue="storeId" items="${stores}" path="/stores"
+			z="W3JsGjKU85xmlaqTGTBFeflyAoU=" />
+		<field:select field="filmId"
+			id="c_net_eyelock_sakila_domain_Inventory_filmId" itemValue="filmId"
+			items="${films}" path="/films" z="MBSKsQ6OAmBlXOgq+C6eHZM9Sq0=" />
+		<field:datetime dateTimePattern="${inventory_lastupdate_date_format}"
+			field="lastUpdate"
+			id="c_net_eyelock_sakila_domain_Inventory_lastUpdate" required="true"
+			z="9BuGq8y/ZJ6kUrDLRfjXRXNjA+4=" />
+	</form:create>
+	<form:dependency dependencies="${dependencies}"
+		id="d_net_eyelock_sakila_domain_Inventory"
+		render="${not empty dependencies}" z="Cqpise1noRrWdVGaFk/rCbDQrx4=" />
 </div>

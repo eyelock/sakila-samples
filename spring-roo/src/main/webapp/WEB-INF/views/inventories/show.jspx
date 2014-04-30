@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_net_eyelock_sakila_domain_Inventory" object="${inventory}" path="/inventories" z="qDQek/r7i86gPwWwIx4CJgPcOk8=">
-        <field:display field="storeId" id="s_net_eyelock_sakila_domain_Inventory_storeId" object="${inventory}" z="mH9qdZPZli1jvB1sIkKQBk3QoVk="/>
-        <field:display field="filmId" id="s_net_eyelock_sakila_domain_Inventory_filmId" object="${inventory}" z="9GbNMooaouS5CGmTeMbsHPmh3Fw="/>
-        <field:display calendar="true" dateTimePattern="${inventory_lastupdate_date_format}" field="lastUpdate" id="s_net_eyelock_sakila_domain_Inventory_lastUpdate" object="${inventory}" z="Ytzu/Hsvn/g5T5Qmx+liKL/dPqg="/>
-    </page:show>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<page:show id="ps_net_eyelock_sakila_domain_Inventory"
+		object="${inventory}" path="/inventories"
+		z="qDQek/r7i86gPwWwIx4CJgPcOk8=">
+		<field:display field="storeId"
+			id="s_net_eyelock_sakila_domain_Inventory_storeId"
+			object="${inventory}" z="mH9qdZPZli1jvB1sIkKQBk3QoVk=" />
+		<field:display field="filmId"
+			id="s_net_eyelock_sakila_domain_Inventory_filmId"
+			object="${inventory}" z="9GbNMooaouS5CGmTeMbsHPmh3Fw=" />
+		<field:display calendar="true"
+			dateTimePattern="${inventory_lastupdate_date_format}"
+			field="lastUpdate"
+			id="s_net_eyelock_sakila_domain_Inventory_lastUpdate"
+			object="${inventory}" z="Ytzu/Hsvn/g5T5Qmx+liKL/dPqg=" />
+	</page:show>
 </div>

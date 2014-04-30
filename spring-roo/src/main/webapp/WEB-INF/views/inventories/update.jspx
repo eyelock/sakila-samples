@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <form:update id="fu_net_eyelock_sakila_domain_Inventory" idField="inventoryId" modelAttribute="inventory" path="/inventories" versionField="none" z="bcacls3iGrpXbrmlrvlPLHzXyC4=">
-        <field:simple field="rentals" id="c_net_eyelock_sakila_domain_Inventory_rentals" messageCode="entity_reference_not_managed" messageCodeAttribute="Rental" z="cFXBEEtpmzER3HMWiUzdQenCECE="/>
-        <field:select field="storeId" id="c_net_eyelock_sakila_domain_Inventory_storeId" itemValue="storeId" items="${stores}" path="/stores" z="W3JsGjKU85xmlaqTGTBFeflyAoU="/>
-        <field:select field="filmId" id="c_net_eyelock_sakila_domain_Inventory_filmId" itemValue="filmId" items="${films}" path="/films" z="MBSKsQ6OAmBlXOgq+C6eHZM9Sq0="/>
-        <field:datetime dateTimePattern="${inventory_lastupdate_date_format}" field="lastUpdate" id="c_net_eyelock_sakila_domain_Inventory_lastUpdate" required="true" z="9BuGq8y/ZJ6kUrDLRfjXRXNjA+4="/>
-    </form:update>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields"
+	xmlns:form="urn:jsptagdir:/WEB-INF/tags/form"
+	xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<form:update id="fu_net_eyelock_sakila_domain_Inventory"
+		idField="inventoryId" modelAttribute="inventory" path="/inventories"
+		versionField="none" z="bcacls3iGrpXbrmlrvlPLHzXyC4=">
+		<field:simple field="rentals"
+			id="c_net_eyelock_sakila_domain_Inventory_rentals"
+			messageCode="entity_reference_not_managed"
+			messageCodeAttribute="Rental" z="cFXBEEtpmzER3HMWiUzdQenCECE=" />
+		<field:select field="storeId"
+			id="c_net_eyelock_sakila_domain_Inventory_storeId"
+			itemValue="storeId" items="${stores}" path="/stores"
+			z="W3JsGjKU85xmlaqTGTBFeflyAoU=" />
+		<field:select field="filmId"
+			id="c_net_eyelock_sakila_domain_Inventory_filmId" itemValue="filmId"
+			items="${films}" path="/films" z="MBSKsQ6OAmBlXOgq+C6eHZM9Sq0=" />
+		<field:datetime dateTimePattern="${inventory_lastupdate_date_format}"
+			field="lastUpdate"
+			id="c_net_eyelock_sakila_domain_Inventory_lastUpdate" required="true"
+			z="9BuGq8y/ZJ6kUrDLRfjXRXNjA+4=" />
+	</form:update>
 </div>

@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <page:list id="pl_net_eyelock_sakila_domain_Staff" items="${staffs}" z="H7gsn5VwptuGb+7jpw4sFJxeMjU=">
-        <table:table data="${staffs}" id="l_net_eyelock_sakila_domain_Staff" path="/staff" typeIdFieldName="staffId" z="WIwQk9XTuoykokFqRQz2nz0gUB0=">
-            <table:column id="c_net_eyelock_sakila_domain_Staff_storeId" property="storeId" z="QHDwKMdtHAZ6+MCrKH05vQW5ldE="/>
-            <table:column id="c_net_eyelock_sakila_domain_Staff_addressId" property="addressId" z="IiXDRZt97nqZVNMFTDyELrhtblQ="/>
-            <table:column id="c_net_eyelock_sakila_domain_Staff_firstName" property="firstName" z="LAOKGjziVG/ffy6Kg0oyKk//Bqc="/>
-        </table:table>
-    </page:list>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form"
+	xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<page:list id="pl_net_eyelock_sakila_domain_Staff" items="${staffs}"
+		z="H7gsn5VwptuGb+7jpw4sFJxeMjU=">
+		<table:table data="${staffs}" id="l_net_eyelock_sakila_domain_Staff"
+			path="/staff" typeIdFieldName="staffId"
+			z="WIwQk9XTuoykokFqRQz2nz0gUB0=">
+			<table:column id="c_net_eyelock_sakila_domain_Staff_storeId"
+				property="storeId" z="QHDwKMdtHAZ6+MCrKH05vQW5ldE=" />
+			<table:column id="c_net_eyelock_sakila_domain_Staff_addressId"
+				property="addressId" z="IiXDRZt97nqZVNMFTDyELrhtblQ=" />
+			<table:column id="c_net_eyelock_sakila_domain_Staff_firstName"
+				property="firstName" z="LAOKGjziVG/ffy6Kg0oyKk//Bqc=" />
+		</table:table>
+	</page:list>
 </div>

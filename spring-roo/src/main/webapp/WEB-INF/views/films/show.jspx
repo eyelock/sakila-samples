@@ -1,19 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_net_eyelock_sakila_domain_Film" object="${film}" path="/films" z="kKQuMYe3ZIicwscbG8TeSJalbjE=">
-        <field:display field="languageId" id="s_net_eyelock_sakila_domain_Film_languageId" object="${film}" z="56SXs0xzpPdzNoKW8HRVwnIKXgc="/>
-        <field:display field="originalLanguageId" id="s_net_eyelock_sakila_domain_Film_originalLanguageId" object="${film}" z="5Wuy2kRkNFaI/dnxYlRK9BWJ7gQ="/>
-        <field:display field="title" id="s_net_eyelock_sakila_domain_Film_title" object="${film}" z="561bxS2hnWkQyHGdyyO3liNj7UM="/>
-        <field:display field="description" id="s_net_eyelock_sakila_domain_Film_description" object="${film}" z="c5o6bxoNhSLi9s1sE2zC7IoZB+0="/>
-        <field:display date="true" dateTimePattern="${film_releaseyear_date_format}" field="releaseYear" id="s_net_eyelock_sakila_domain_Film_releaseYear" object="${film}" z="4hYVYzvmLRcFAadRpaYm93Ej0+E="/>
-        <field:display field="rentalDuration" id="s_net_eyelock_sakila_domain_Film_rentalDuration" object="${film}" z="MEYJK2QaN+3Z53OaQ3sHOJUPyI0="/>
-        <field:display field="rentalRate" id="s_net_eyelock_sakila_domain_Film_rentalRate" object="${film}" z="31HZiIf48gUKXWVMGrkFwaQA/m0="/>
-        <field:display field="length" id="s_net_eyelock_sakila_domain_Film_length" object="${film}" z="vXlRXQ1GNDEJRQMAka6/M196U+Q="/>
-        <field:display field="replacementCost" id="s_net_eyelock_sakila_domain_Film_replacementCost" object="${film}" z="ROiN8O8irEviBIoCcibs4QQpX4A="/>
-        <field:display field="rating" id="s_net_eyelock_sakila_domain_Film_rating" object="${film}" z="Eb2efNVW7hwnY32Y4Q6UjWXgJeA="/>
-        <field:display field="specialFeatures" id="s_net_eyelock_sakila_domain_Film_specialFeatures" object="${film}" z="7jxRt6FTmJ63B6xxkKt67fiDS1Y="/>
-        <field:display calendar="true" dateTimePattern="${film_lastupdate_date_format}" field="lastUpdate" id="s_net_eyelock_sakila_domain_Film_lastUpdate" object="${film}" z="Y0BaQ8GBZ4qYn1Lx8dW4NKQCMpI="/>
-    </page:show>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<page:show id="ps_net_eyelock_sakila_domain_Film" object="${film}"
+		path="/films" z="kKQuMYe3ZIicwscbG8TeSJalbjE=">
+		<field:display field="languageId"
+			id="s_net_eyelock_sakila_domain_Film_languageId" object="${film}"
+			z="56SXs0xzpPdzNoKW8HRVwnIKXgc=" />
+		<field:display field="originalLanguageId"
+			id="s_net_eyelock_sakila_domain_Film_originalLanguageId"
+			object="${film}" z="5Wuy2kRkNFaI/dnxYlRK9BWJ7gQ=" />
+		<field:display field="title"
+			id="s_net_eyelock_sakila_domain_Film_title" object="${film}"
+			z="561bxS2hnWkQyHGdyyO3liNj7UM=" />
+		<field:display field="description"
+			id="s_net_eyelock_sakila_domain_Film_description" object="${film}"
+			z="c5o6bxoNhSLi9s1sE2zC7IoZB+0=" />
+		<field:display date="true"
+			dateTimePattern="${film_releaseyear_date_format}" field="releaseYear"
+			id="s_net_eyelock_sakila_domain_Film_releaseYear" object="${film}"
+			z="4hYVYzvmLRcFAadRpaYm93Ej0+E=" />
+		<field:display field="rentalDuration"
+			id="s_net_eyelock_sakila_domain_Film_rentalDuration" object="${film}"
+			z="MEYJK2QaN+3Z53OaQ3sHOJUPyI0=" />
+		<field:display field="rentalRate"
+			id="s_net_eyelock_sakila_domain_Film_rentalRate" object="${film}"
+			z="31HZiIf48gUKXWVMGrkFwaQA/m0=" />
+		<field:display field="length"
+			id="s_net_eyelock_sakila_domain_Film_length" object="${film}"
+			z="vXlRXQ1GNDEJRQMAka6/M196U+Q=" />
+		<field:display field="replacementCost"
+			id="s_net_eyelock_sakila_domain_Film_replacementCost"
+			object="${film}" z="ROiN8O8irEviBIoCcibs4QQpX4A=" />
+		<field:display field="rating"
+			id="s_net_eyelock_sakila_domain_Film_rating" object="${film}"
+			z="Eb2efNVW7hwnY32Y4Q6UjWXgJeA=" />
+		<field:display field="specialFeatures"
+			id="s_net_eyelock_sakila_domain_Film_specialFeatures"
+			object="${film}" z="7jxRt6FTmJ63B6xxkKt67fiDS1Y=" />
+		<field:display calendar="true"
+			dateTimePattern="${film_lastupdate_date_format}" field="lastUpdate"
+			id="s_net_eyelock_sakila_domain_Film_lastUpdate" object="${film}"
+			z="Y0BaQ8GBZ4qYn1Lx8dW4NKQCMpI=" />
+	</page:show>
 </div>

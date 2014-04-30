@@ -28,6 +28,7 @@ target/
 .settings/
 .project
 .classpath
+.metadata
 
 # Java #
 ###################

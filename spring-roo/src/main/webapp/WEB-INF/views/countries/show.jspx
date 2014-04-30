@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_net_eyelock_sakila_domain_Country" object="${country}" path="/countries" z="dDsNfEvg7yDH2QJEPmjAuxRlB48=">
-        <field:display field="country" id="s_net_eyelock_sakila_domain_Country_country" object="${country}" z="o7N2s6Iy9oDPJLY/oaivPOJ3rPI="/>
-        <field:display calendar="true" dateTimePattern="${country_lastupdate_date_format}" field="lastUpdate" id="s_net_eyelock_sakila_domain_Country_lastUpdate" object="${country}" z="yCj1/BKsCr/pn6x/sevHx9TSMxg="/>
-    </page:show>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<page:show id="ps_net_eyelock_sakila_domain_Country"
+		object="${country}" path="/countries" z="dDsNfEvg7yDH2QJEPmjAuxRlB48=">
+		<field:display field="country"
+			id="s_net_eyelock_sakila_domain_Country_country" object="${country}"
+			z="o7N2s6Iy9oDPJLY/oaivPOJ3rPI=" />
+		<field:display calendar="true"
+			dateTimePattern="${country_lastupdate_date_format}"
+			field="lastUpdate"
+			id="s_net_eyelock_sakila_domain_Country_lastUpdate"
+			object="${country}" z="yCj1/BKsCr/pn6x/sevHx9TSMxg=" />
+	</page:show>
 </div>

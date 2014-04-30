@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_net_eyelock_sakila_domain_Rental" object="${rental}" path="/rentals" z="Ts+Y9M5WHy5RGp2UWG/lhtRoDX4=">
-        <field:display calendar="true" dateTimePattern="${rental_rentaldate_date_format}" field="rentalDate" id="s_net_eyelock_sakila_domain_Rental_rentalDate" object="${rental}" z="xAOoa+lnbNP/5WDazhnJT8zf4bQ="/>
-        <field:display calendar="true" dateTimePattern="${rental_returndate_date_format}" field="returnDate" id="s_net_eyelock_sakila_domain_Rental_returnDate" object="${rental}" z="vMdavQna7RKdnt7L1EPFRTK4pIw="/>
-        <field:display calendar="true" dateTimePattern="${rental_lastupdate_date_format}" field="lastUpdate" id="s_net_eyelock_sakila_domain_Rental_lastUpdate" object="${rental}" z="IB21G3l2473YYNGoXroAT3KTpr0="/>
-        <field:display field="staffId" id="s_net_eyelock_sakila_domain_Rental_staffId" object="${rental}" z="zT+VPaxuf0cWpxaXreNBb1pgk9s="/>
-        <field:display field="inventoryId" id="s_net_eyelock_sakila_domain_Rental_inventoryId" object="${rental}" z="D1Gq+1S2uEZcB3Ntl3AGz9iTPRY="/>
-        <field:display field="customerId" id="s_net_eyelock_sakila_domain_Rental_customerId" object="${rental}" z="3wrqkug31M5hy3/nHmRgDMN2PpU="/>
-    </page:show>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<page:show id="ps_net_eyelock_sakila_domain_Rental" object="${rental}"
+		path="/rentals" z="Ts+Y9M5WHy5RGp2UWG/lhtRoDX4=">
+		<field:display calendar="true"
+			dateTimePattern="${rental_rentaldate_date_format}" field="rentalDate"
+			id="s_net_eyelock_sakila_domain_Rental_rentalDate" object="${rental}"
+			z="xAOoa+lnbNP/5WDazhnJT8zf4bQ=" />
+		<field:display calendar="true"
+			dateTimePattern="${rental_returndate_date_format}" field="returnDate"
+			id="s_net_eyelock_sakila_domain_Rental_returnDate" object="${rental}"
+			z="vMdavQna7RKdnt7L1EPFRTK4pIw=" />
+		<field:display calendar="true"
+			dateTimePattern="${rental_lastupdate_date_format}" field="lastUpdate"
+			id="s_net_eyelock_sakila_domain_Rental_lastUpdate" object="${rental}"
+			z="IB21G3l2473YYNGoXroAT3KTpr0=" />
+		<field:display field="staffId"
+			id="s_net_eyelock_sakila_domain_Rental_staffId" object="${rental}"
+			z="zT+VPaxuf0cWpxaXreNBb1pgk9s=" />
+		<field:display field="inventoryId"
+			id="s_net_eyelock_sakila_domain_Rental_inventoryId"
+			object="${rental}" z="D1Gq+1S2uEZcB3Ntl3AGz9iTPRY=" />
+		<field:display field="customerId"
+			id="s_net_eyelock_sakila_domain_Rental_customerId" object="${rental}"
+			z="3wrqkug31M5hy3/nHmRgDMN2PpU=" />
+	</page:show>
 </div>

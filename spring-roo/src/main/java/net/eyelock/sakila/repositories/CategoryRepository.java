@@ -1,4 +1,5 @@
 package net.eyelock.sakila.repositories;
+
 import net.eyelock.sakila.domain.Category;
 
 import org.springframework.roo.addon.layers.repository.jpa.RooJpaRepository;

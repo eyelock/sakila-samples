@@ -7,13 +7,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class AppFactory {
-	
-	@Autowired
-	private AppConfig appConfig;
 
-	public WebPaginationHelper createPaginationHelper() {
-		WebPaginationHelper helper = new WebPaginationHelper();
-		helper.setAppConfig(appConfig);
-		return helper;
-	}
+    @Autowired
+    private AppConfig appConfig;
+
+    public WebPaginationHelper createPaginationHelper() {
+	WebPaginationHelper helper = new WebPaginationHelper();
+	helper.setAppConfig(appConfig);
+	return helper;
+    }
 }

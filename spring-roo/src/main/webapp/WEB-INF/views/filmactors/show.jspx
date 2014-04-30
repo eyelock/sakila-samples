@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_net_eyelock_sakila_domain_FilmActor" object="${filmactor}" path="/filmactors" z="HnIqc5tWMpInonNXlfEZMtmgg2Y=">
-        <field:display field="actorId" id="s_net_eyelock_sakila_domain_FilmActor_actorId" object="${filmactor}" z="OoeXR0UuBtD94f+9AMV45+a65xM="/>
-        <field:display field="filmId" id="s_net_eyelock_sakila_domain_FilmActor_filmId" object="${filmactor}" z="zU0iwn3+wwcJFxAPnt4dhQz2zBg="/>
-        <field:display calendar="true" dateTimePattern="${filmActor_lastupdate_date_format}" field="lastUpdate" id="s_net_eyelock_sakila_domain_FilmActor_lastUpdate" object="${filmactor}" z="4ospvm5hx0px+obhekq9mSCzix4="/>
-    </page:show>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<page:show id="ps_net_eyelock_sakila_domain_FilmActor"
+		object="${filmactor}" path="/filmactors"
+		z="HnIqc5tWMpInonNXlfEZMtmgg2Y=">
+		<field:display field="actorId"
+			id="s_net_eyelock_sakila_domain_FilmActor_actorId"
+			object="${filmactor}" z="OoeXR0UuBtD94f+9AMV45+a65xM=" />
+		<field:display field="filmId"
+			id="s_net_eyelock_sakila_domain_FilmActor_filmId"
+			object="${filmactor}" z="zU0iwn3+wwcJFxAPnt4dhQz2zBg=" />
+		<field:display calendar="true"
+			dateTimePattern="${filmActor_lastupdate_date_format}"
+			field="lastUpdate"
+			id="s_net_eyelock_sakila_domain_FilmActor_lastUpdate"
+			object="${filmactor}" z="4ospvm5hx0px+obhekq9mSCzix4=" />
+	</page:show>
 </div>

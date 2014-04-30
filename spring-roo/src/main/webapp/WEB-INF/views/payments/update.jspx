@@ -1,13 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <form:update id="fu_net_eyelock_sakila_domain_Payment" idField="paymentId" modelAttribute="payment" path="/payments" versionField="none" z="OYkWEnZPLGbE3MbhiZTGW5WM5h8=">
-        <field:select field="rentalId" id="c_net_eyelock_sakila_domain_Payment_rentalId" itemValue="rentalId" items="${rentals}" path="/rentals" z="RbZoOj6LJ1m93CX3A1xTMVp7J8k="/>
-        <field:select field="customerId" id="c_net_eyelock_sakila_domain_Payment_customerId" itemValue="customerId" items="${customers}" path="/customers" z="CQMOn6x3XA7Qv2OdWNVVE3oD1Xs="/>
-        <field:select field="staffId" id="c_net_eyelock_sakila_domain_Payment_staffId" itemValue="staffId" items="${staffs}" path="/staff" z="yGCWQSpktX9n88k2sWI1bw//mKA="/>
-        <field:input field="amount" id="c_net_eyelock_sakila_domain_Payment_amount" required="true" validationMessageCode="field_invalid_number" z="8OuFBA7GDvvAeayXQsKdt1SONSo="/>
-        <field:datetime dateTimePattern="${payment_paymentdate_date_format}" field="paymentDate" id="c_net_eyelock_sakila_domain_Payment_paymentDate" required="true" z="whcFytyazwk6VThBznUJD2S6JUo="/>
-        <field:datetime dateTimePattern="${payment_lastupdate_date_format}" field="lastUpdate" id="c_net_eyelock_sakila_domain_Payment_lastUpdate" required="true" z="w+vDVT9bpoJAvysxADtUu2WDsP4="/>
-    </form:update>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields"
+	xmlns:form="urn:jsptagdir:/WEB-INF/tags/form"
+	xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<form:update id="fu_net_eyelock_sakila_domain_Payment"
+		idField="paymentId" modelAttribute="payment" path="/payments"
+		versionField="none" z="OYkWEnZPLGbE3MbhiZTGW5WM5h8=">
+		<field:select field="rentalId"
+			id="c_net_eyelock_sakila_domain_Payment_rentalId"
+			itemValue="rentalId" items="${rentals}" path="/rentals"
+			z="RbZoOj6LJ1m93CX3A1xTMVp7J8k=" />
+		<field:select field="customerId"
+			id="c_net_eyelock_sakila_domain_Payment_customerId"
+			itemValue="customerId" items="${customers}" path="/customers"
+			z="CQMOn6x3XA7Qv2OdWNVVE3oD1Xs=" />
+		<field:select field="staffId"
+			id="c_net_eyelock_sakila_domain_Payment_staffId" itemValue="staffId"
+			items="${staffs}" path="/staff" z="yGCWQSpktX9n88k2sWI1bw//mKA=" />
+		<field:input field="amount"
+			id="c_net_eyelock_sakila_domain_Payment_amount" required="true"
+			validationMessageCode="field_invalid_number"
+			z="8OuFBA7GDvvAeayXQsKdt1SONSo=" />
+		<field:datetime dateTimePattern="${payment_paymentdate_date_format}"
+			field="paymentDate"
+			id="c_net_eyelock_sakila_domain_Payment_paymentDate" required="true"
+			z="whcFytyazwk6VThBznUJD2S6JUo=" />
+		<field:datetime dateTimePattern="${payment_lastupdate_date_format}"
+			field="lastUpdate"
+			id="c_net_eyelock_sakila_domain_Payment_lastUpdate" required="true"
+			z="w+vDVT9bpoJAvysxADtUu2WDsP4=" />
+	</form:update>
 </div>

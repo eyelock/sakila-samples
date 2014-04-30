@@ -1,17 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_net_eyelock_sakila_domain_Staff" object="${staff}" path="/staff" z="wz0oka54oPdW21xqOXbOIZGqsmI=">
-        <field:display field="storeId" id="s_net_eyelock_sakila_domain_Staff_storeId" object="${staff}" z="voXemga3kzXLsmrYBGNO++uwphc="/>
-        <field:display field="addressId" id="s_net_eyelock_sakila_domain_Staff_addressId" object="${staff}" z="gGuijR1pGKVxr17yZnNRLaIcUHo="/>
-        <field:display field="firstName" id="s_net_eyelock_sakila_domain_Staff_firstName" object="${staff}" z="IU1SHGDBvEtH4pEYAKnWZOhmau8="/>
-        <field:display field="lastName" id="s_net_eyelock_sakila_domain_Staff_lastName" object="${staff}" z="y2juGB8J6cHmC+KY5YWR83QIieo="/>
-        <field:display field="picture" id="s_net_eyelock_sakila_domain_Staff_picture" object="${staff}" z="b+WxbmCyWk0j5HsBqFbIUvJxE8o="/>
-        <field:display field="email" id="s_net_eyelock_sakila_domain_Staff_email" object="${staff}" z="AcFKbK6yZBdZk2ZahZg0yp0t+rw="/>
-        <field:display field="active" id="s_net_eyelock_sakila_domain_Staff_active" object="${staff}" z="W+//+Kk1wkpwhv+aHwxzi46lumU="/>
-        <field:display field="username" id="s_net_eyelock_sakila_domain_Staff_username" object="${staff}" z="ZUAS0MZccqwablklkS6vsjbX8X4="/>
-        <field:display field="password" id="s_net_eyelock_sakila_domain_Staff_password" object="${staff}" z="OpwoTCGWBfUuzVeA+jhL/PHLrxw="/>
-        <field:display calendar="true" dateTimePattern="${staff_lastupdate_date_format}" field="lastUpdate" id="s_net_eyelock_sakila_domain_Staff_lastUpdate" object="${staff}" z="LukQ914rBM7+cW/qpNV2KWiQQXE="/>
-    </page:show>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<page:show id="ps_net_eyelock_sakila_domain_Staff" object="${staff}"
+		path="/staff" z="wz0oka54oPdW21xqOXbOIZGqsmI=">
+		<field:display field="storeId"
+			id="s_net_eyelock_sakila_domain_Staff_storeId" object="${staff}"
+			z="voXemga3kzXLsmrYBGNO++uwphc=" />
+		<field:display field="addressId"
+			id="s_net_eyelock_sakila_domain_Staff_addressId" object="${staff}"
+			z="gGuijR1pGKVxr17yZnNRLaIcUHo=" />
+		<field:display field="firstName"
+			id="s_net_eyelock_sakila_domain_Staff_firstName" object="${staff}"
+			z="IU1SHGDBvEtH4pEYAKnWZOhmau8=" />
+		<field:display field="lastName"
+			id="s_net_eyelock_sakila_domain_Staff_lastName" object="${staff}"
+			z="y2juGB8J6cHmC+KY5YWR83QIieo=" />
+		<field:display field="picture"
+			id="s_net_eyelock_sakila_domain_Staff_picture" object="${staff}"
+			z="b+WxbmCyWk0j5HsBqFbIUvJxE8o=" />
+		<field:display field="email"
+			id="s_net_eyelock_sakila_domain_Staff_email" object="${staff}"
+			z="AcFKbK6yZBdZk2ZahZg0yp0t+rw=" />
+		<field:display field="active"
+			id="s_net_eyelock_sakila_domain_Staff_active" object="${staff}"
+			z="W+//+Kk1wkpwhv+aHwxzi46lumU=" />
+		<field:display field="username"
+			id="s_net_eyelock_sakila_domain_Staff_username" object="${staff}"
+			z="ZUAS0MZccqwablklkS6vsjbX8X4=" />
+		<field:display field="password"
+			id="s_net_eyelock_sakila_domain_Staff_password" object="${staff}"
+			z="OpwoTCGWBfUuzVeA+jhL/PHLrxw=" />
+		<field:display calendar="true"
+			dateTimePattern="${staff_lastupdate_date_format}" field="lastUpdate"
+			id="s_net_eyelock_sakila_domain_Staff_lastUpdate" object="${staff}"
+			z="LukQ914rBM7+cW/qpNV2KWiQQXE=" />
+	</page:show>
 </div>

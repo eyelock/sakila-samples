@@ -1,4 +1,5 @@
 package net.eyelock.sakila.services;
+
 import java.util.Collection;
 
 import net.eyelock.sakila.domain.Customer;
@@ -12,9 +13,13 @@ import org.springframework.roo.addon.layers.service.RooService;
 
 @RooService(domainTypes = { net.eyelock.sakila.domain.Rental.class })
 public interface RentalService {
-	Collection<Rental> findByStore(Store store);
-	Collection<Rental> findByCustomer(Customer customer);
-	Collection<Rental> findByStaff(Staff staff);
-	Collection<Rental> findByInventory(Inventory inventory);
-	Collection<Rental> findByFilm(Film film);
+    Collection<Rental> findByStore(Store store);
+
+    Collection<Rental> findByCustomer(Customer customer);
+
+    Collection<Rental> findByStaff(Staff staff);
+
+    Collection<Rental> findByInventory(Inventory inventory);
+
+    Collection<Rental> findByFilm(Film film);
 }

@@ -1,4 +1,5 @@
 package net.eyelock.sakila.domain;
+
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Set;
@@ -15,32 +16,45 @@ import flexjson.JSONSerializer;
 @RooJavaBean
 @RooJpaEntity(versionField = "", table = "film")
 @RooDbManaged(automaticallyDelete = true)
-@RooToString(excludeFields = { "filmActors", "filmCategories", "inventories", "languageId", "originalLanguageId", "lastUpdate" })
+@RooToString(excludeFields = { "filmActors", "filmCategories", "inventories",
+	"languageId", "originalLanguageId", "lastUpdate" })
 @RooJson
 public class Film {
 
-    @OneToMany(mappedBy = "filmId", fetch = FetchType.LAZY, cascade = { javax.persistence.CascadeType.PERSIST, javax.persistence.CascadeType.MERGE })
+    @OneToMany(mappedBy = "filmId", fetch = FetchType.LAZY, cascade = {
+	    javax.persistence.CascadeType.PERSIST,
+	    javax.persistence.CascadeType.MERGE })
     private Set<FilmCategory> filmCategories;
 
-    @OneToMany(mappedBy = "filmId", fetch = FetchType.LAZY, cascade = { javax.persistence.CascadeType.PERSIST, javax.persistence.CascadeType.MERGE })
+    @OneToMany(mappedBy = "filmId", fetch = FetchType.LAZY, cascade = {
+	    javax.persistence.CascadeType.PERSIST,
+	    javax.persistence.CascadeType.MERGE })
     private Set<FilmActor> filmActors;
 
-    @OneToMany(mappedBy = "filmId", fetch = FetchType.LAZY, cascade = { javax.persistence.CascadeType.PERSIST, javax.persistence.CascadeType.MERGE })
+    @OneToMany(mappedBy = "filmId", fetch = FetchType.LAZY, cascade = {
+	    javax.persistence.CascadeType.PERSIST,
+	    javax.persistence.CascadeType.MERGE })
     private Set<Inventory> inventories;
 
     public Short getId() {
-        return getFilmId();
+	return getFilmId();
     }
 
     public static String toJsonArray(Collection<Film> collection) {
-        return new JSONSerializer().transform(new FlexJsonDateTransformer(), Calendar.class).exclude("*.id").serialize(collection);
+	return new JSONSerializer()
+		.transform(new FlexJsonDateTransformer(), Calendar.class)
+		.exclude("*.id").serialize(collection);
     }
 
     public String toJson(String[] fields) {
-        return new JSONSerializer().include(fields).transform(new FlexJsonDateTransformer(), Calendar.class).exclude("*.class").serialize(this);
+	return new JSONSerializer().include(fields)
+		.transform(new FlexJsonDateTransformer(), Calendar.class)
+		.exclude("*.class").serialize(this);
     }
 
     public String toJson() {
-        return new JSONSerializer().transform(new FlexJsonDateTransformer(), Calendar.class).exclude("*.class").serialize(this);
+	return new JSONSerializer()
+		.transform(new FlexJsonDateTransformer(), Calendar.class)
+		.exclude("*.class").serialize(this);
     }
 }

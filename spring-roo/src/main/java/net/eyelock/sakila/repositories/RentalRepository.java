@@ -1,4 +1,5 @@
 package net.eyelock.sakila.repositories;
+
 import java.util.Collection;
 
 import net.eyelock.sakila.domain.Customer;
@@ -10,7 +11,9 @@ import org.springframework.roo.addon.layers.repository.jpa.RooJpaRepository;
 
 @RooJpaRepository(domainType = Rental.class)
 public interface RentalRepository {
-	Collection<Rental> findByCustomerId(Customer customer);
-	Collection<Rental> findByStaffId(Staff staff);
-	Collection<Rental> findByInventoryId(Inventory inventory);
+    Collection<Rental> findByCustomerId(Customer customer);
+
+    Collection<Rental> findByStaffId(Staff staff);
+
+    Collection<Rental> findByInventoryId(Inventory inventory);
 }

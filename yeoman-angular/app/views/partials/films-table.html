@@ -19,7 +19,7 @@
     <tr>
         <td colspan="4">
             <div ng-if="!((items.pageNumber * items.pageSize) == items.totalCount)">
-                <pagination total-items="items.totalCount" page="items.pageNumber" max-size="5" boundary-links="true" on-select-page="scope.onPaginate()"></pagination>
+                <pagination total-items="items.totalCount" page="items.pageNumber" max-size="5" boundary-links="true" on-select-page="onPaginate()"></pagination>
             </div>
         </td>    
     </tr>

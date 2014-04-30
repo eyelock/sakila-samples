@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_net_eyelock_sakila_domain_Language" object="${language}" path="/languages" z="AQrK4oI6tvcUfM0nfHHaTpVGTfI=">
-        <field:display field="name" id="s_net_eyelock_sakila_domain_Language_name" object="${language}" z="7e8tOfn8CEthohv/6ss+siJFVOE="/>
-        <field:display calendar="true" dateTimePattern="${language_lastupdate_date_format}" field="lastUpdate" id="s_net_eyelock_sakila_domain_Language_lastUpdate" object="${language}" z="5xgbr6LA1FXvFpN73IPgjsg6jkY="/>
-    </page:show>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<page:show id="ps_net_eyelock_sakila_domain_Language"
+		object="${language}" path="/languages"
+		z="AQrK4oI6tvcUfM0nfHHaTpVGTfI=">
+		<field:display field="name"
+			id="s_net_eyelock_sakila_domain_Language_name" object="${language}"
+			z="7e8tOfn8CEthohv/6ss+siJFVOE=" />
+		<field:display calendar="true"
+			dateTimePattern="${language_lastupdate_date_format}"
+			field="lastUpdate"
+			id="s_net_eyelock_sakila_domain_Language_lastUpdate"
+			object="${language}" z="5xgbr6LA1FXvFpN73IPgjsg6jkY=" />
+	</page:show>
 </div>

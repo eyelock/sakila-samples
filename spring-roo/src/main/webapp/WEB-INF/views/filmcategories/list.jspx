@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <page:list id="pl_net_eyelock_sakila_domain_FilmCategory" items="${filmcategorys}" z="gyp2kzZSPRfN+JYm+4LKtrn3Nxg=">
-        <table:table data="${filmcategorys}" id="l_net_eyelock_sakila_domain_FilmCategory" path="/filmcategories" z="JvvRvYrXkkYEISihNTEVWXcW15Q=">
-            <table:column id="c_net_eyelock_sakila_domain_FilmCategory_filmId" property="filmId" z="crfj/28si9a0Wto0ihuP7NmrXl8="/>
-            <table:column id="c_net_eyelock_sakila_domain_FilmCategory_categoryId" property="categoryId" z="gP88XICB8QzI4LGRWzaRUj08AdY="/>
-            <table:column calendar="true" dateTimePattern="${filmCategory_lastupdate_date_format}" id="c_net_eyelock_sakila_domain_FilmCategory_lastUpdate" property="lastUpdate" z="rwLj70xvpnd04+7YaCCTzW+Y7iI="/>
-        </table:table>
-    </page:list>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form"
+	xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<page:list id="pl_net_eyelock_sakila_domain_FilmCategory"
+		items="${filmcategorys}" z="gyp2kzZSPRfN+JYm+4LKtrn3Nxg=">
+		<table:table data="${filmcategorys}"
+			id="l_net_eyelock_sakila_domain_FilmCategory" path="/filmcategories"
+			z="JvvRvYrXkkYEISihNTEVWXcW15Q=">
+			<table:column id="c_net_eyelock_sakila_domain_FilmCategory_filmId"
+				property="filmId" z="crfj/28si9a0Wto0ihuP7NmrXl8=" />
+			<table:column
+				id="c_net_eyelock_sakila_domain_FilmCategory_categoryId"
+				property="categoryId" z="gP88XICB8QzI4LGRWzaRUj08AdY=" />
+			<table:column calendar="true"
+				dateTimePattern="${filmCategory_lastupdate_date_format}"
+				id="c_net_eyelock_sakila_domain_FilmCategory_lastUpdate"
+				property="lastUpdate" z="rwLj70xvpnd04+7YaCCTzW+Y7iI=" />
+		</table:table>
+	</page:list>
 </div>

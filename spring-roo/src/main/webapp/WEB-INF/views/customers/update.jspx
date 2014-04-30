@@ -1,17 +1,47 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <form:update id="fu_net_eyelock_sakila_domain_Customer" idField="customerId" modelAttribute="customer" path="/customers" versionField="none" z="8V+IdIq8kn4uYIKQSjJrnRVXFxU=">
-        <field:simple field="payments" id="c_net_eyelock_sakila_domain_Customer_payments" messageCode="entity_reference_not_managed" messageCodeAttribute="Payment" z="5+pIMZUv7+R32lyAoPvbADQw0H0="/>
-        <field:simple field="rentals" id="c_net_eyelock_sakila_domain_Customer_rentals" messageCode="entity_reference_not_managed" messageCodeAttribute="Rental" z="GsqF6ORTwpIGVbSQ4HToi1HihLQ="/>
-        <field:select field="addressId" id="c_net_eyelock_sakila_domain_Customer_addressId" itemValue="addressId" items="${addresses}" path="/addresses" z="jBXvwYUuQ/CgJJfNkcuiBDzX+3c="/>
-        <field:select field="storeId" id="c_net_eyelock_sakila_domain_Customer_storeId" itemValue="storeId" items="${stores}" path="/stores" z="fIWlDGMRJZg2/+cCgbvv580OGAk="/>
-        <field:input field="firstName" id="c_net_eyelock_sakila_domain_Customer_firstName" required="true" z="p52JKXlodZRe6CYYPltoz3vHtxk="/>
-        <field:input field="lastName" id="c_net_eyelock_sakila_domain_Customer_lastName" required="true" z="ItFP+vb3u/q9SOnTdE4IXArLoW0="/>
-        <field:input field="email" id="c_net_eyelock_sakila_domain_Customer_email" validationMessageCode="field_invalid_email" z="f3kaZbOHUG+tK3AO64J5tYx/pLw="/>
-        <field:checkbox field="active" id="c_net_eyelock_sakila_domain_Customer_active" z="0B14gPpNj92a3j9ZRJxDf05upQw="/>
-        <field:datetime dateTimePattern="${customer_createdate_date_format}" field="createDate" id="c_net_eyelock_sakila_domain_Customer_createDate" required="true" z="u3YkaZK2f3c/e0JtnlNnUQWG1z8="/>
-        <field:datetime dateTimePattern="${customer_lastupdate_date_format}" field="lastUpdate" id="c_net_eyelock_sakila_domain_Customer_lastUpdate" required="true" z="HoTOcsaeEqOAE7sl3Ue3Sa7KQLg="/>
-    </form:update>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields"
+	xmlns:form="urn:jsptagdir:/WEB-INF/tags/form"
+	xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<form:update id="fu_net_eyelock_sakila_domain_Customer"
+		idField="customerId" modelAttribute="customer" path="/customers"
+		versionField="none" z="8V+IdIq8kn4uYIKQSjJrnRVXFxU=">
+		<field:simple field="payments"
+			id="c_net_eyelock_sakila_domain_Customer_payments"
+			messageCode="entity_reference_not_managed"
+			messageCodeAttribute="Payment" z="5+pIMZUv7+R32lyAoPvbADQw0H0=" />
+		<field:simple field="rentals"
+			id="c_net_eyelock_sakila_domain_Customer_rentals"
+			messageCode="entity_reference_not_managed"
+			messageCodeAttribute="Rental" z="GsqF6ORTwpIGVbSQ4HToi1HihLQ=" />
+		<field:select field="addressId"
+			id="c_net_eyelock_sakila_domain_Customer_addressId"
+			itemValue="addressId" items="${addresses}" path="/addresses"
+			z="jBXvwYUuQ/CgJJfNkcuiBDzX+3c=" />
+		<field:select field="storeId"
+			id="c_net_eyelock_sakila_domain_Customer_storeId" itemValue="storeId"
+			items="${stores}" path="/stores" z="fIWlDGMRJZg2/+cCgbvv580OGAk=" />
+		<field:input field="firstName"
+			id="c_net_eyelock_sakila_domain_Customer_firstName" required="true"
+			z="p52JKXlodZRe6CYYPltoz3vHtxk=" />
+		<field:input field="lastName"
+			id="c_net_eyelock_sakila_domain_Customer_lastName" required="true"
+			z="ItFP+vb3u/q9SOnTdE4IXArLoW0=" />
+		<field:input field="email"
+			id="c_net_eyelock_sakila_domain_Customer_email"
+			validationMessageCode="field_invalid_email"
+			z="f3kaZbOHUG+tK3AO64J5tYx/pLw=" />
+		<field:checkbox field="active"
+			id="c_net_eyelock_sakila_domain_Customer_active"
+			z="0B14gPpNj92a3j9ZRJxDf05upQw=" />
+		<field:datetime dateTimePattern="${customer_createdate_date_format}"
+			field="createDate"
+			id="c_net_eyelock_sakila_domain_Customer_createDate" required="true"
+			z="u3YkaZK2f3c/e0JtnlNnUQWG1z8=" />
+		<field:datetime dateTimePattern="${customer_lastupdate_date_format}"
+			field="lastUpdate"
+			id="c_net_eyelock_sakila_domain_Customer_lastUpdate" required="true"
+			z="HoTOcsaeEqOAE7sl3Ue3Sa7KQLg=" />
+	</form:update>
 </div>

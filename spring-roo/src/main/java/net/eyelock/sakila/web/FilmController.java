@@ -1,4 +1,5 @@
 package net.eyelock.sakila.web;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -28,79 +29,88 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RooWebScaffold(path = "films", formBackingObject = Film.class)
 @RooWebJson(jsonObject = Film.class)
 public class FilmController {
-	@Autowired
-	private AppFactory appFactory;
-	
-	@Autowired
-	private FilmCategoryService filmCategoryService;
-	
-	@Autowired
-	private FilmActorService filmActorService;
+    @Autowired
+    private AppFactory appFactory;
 
-	@RequestMapping(headers = "Accept=application/json")
+    @Autowired
+    private FilmCategoryService filmCategoryService;
+
+    @Autowired
+    private FilmActorService filmActorService;
+
+    @RequestMapping(headers = "Accept=application/json")
     @ResponseBody
-    public ResponseEntity<String> listJson(@RequestParam(value="pageSize", required=false) String pageSize, @RequestParam(value="pageNumber", required=false) String pageNumber) {
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Type", "application/json; charset=utf-8");
-        
-        WebPaginationHelper pagination = appFactory.createPaginationHelper();
-        pagination.setTotalNoRecords(filmService.countAllFilms());
-        pagination.configure(pageSize, pageNumber);
-        
-        List<Film> result = filmService.findFilmEntries(pagination.getFirstResult(), pagination.getMaxResults());
-        
-        return new ResponseEntity<String>(pagination.wrapResponse(Film.toJsonArray(result)), headers, HttpStatus.OK);
+    public ResponseEntity<String> listJson(
+	    @RequestParam(value = "pageSize", required = false) String pageSize,
+	    @RequestParam(value = "pageNumber", required = false) String pageNumber) {
+	HttpHeaders headers = new HttpHeaders();
+	headers.add("Content-Type", "application/json; charset=utf-8");
+
+	WebPaginationHelper pagination = appFactory.createPaginationHelper();
+	pagination.setTotalNoRecords(filmService.countAllFilms());
+	pagination.configure(pageSize, pageNumber);
+
+	List<Film> result = filmService.findFilmEntries(
+		pagination.getFirstResult(), pagination.getMaxResults());
+
+	return new ResponseEntity<String>(pagination.wrapResponse(Film
+		.toJsonArray(result)), headers, HttpStatus.OK);
     }
-	
+
     @RequestMapping(value = "/{filmId}/categories", method = RequestMethod.GET, headers = "Accept=application/json")
     @ResponseBody
-    public ResponseEntity<String> showCategoriesJson(@PathVariable("filmId") Short filmId) {
-        Film film = filmService.findFilm(filmId);
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Type", "application/json; charset=utf-8");
-        if (film == null) {
-            return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
-        }
-        
-        Collection<Category> collection = filmCategoryService.getCategories(film);
-        
-        WebPaginationHelper pagination = appFactory.createPaginationHelper();
-        pagination.configure(collection);
+    public ResponseEntity<String> showCategoriesJson(
+	    @PathVariable("filmId") Short filmId) {
+	Film film = filmService.findFilm(filmId);
+	HttpHeaders headers = new HttpHeaders();
+	headers.add("Content-Type", "application/json; charset=utf-8");
+	if (film == null) {
+	    return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
+	}
 
-        return new ResponseEntity<String>(pagination.wrapResponse(Category.toJsonArray(collection)), headers, HttpStatus.OK);
+	Collection<Category> collection = filmCategoryService
+		.getCategories(film);
+
+	WebPaginationHelper pagination = appFactory.createPaginationHelper();
+	pagination.configure(collection);
+
+	return new ResponseEntity<String>(pagination.wrapResponse(Category
+		.toJsonArray(collection)), headers, HttpStatus.OK);
     }
-    
+
     @RequestMapping(value = "/{filmId}/actors", method = RequestMethod.GET, headers = "Accept=application/json")
     @ResponseBody
-    public ResponseEntity<String> showActorsJson(@PathVariable("filmId") Short filmId) {
-        Film film = filmService.findFilm(filmId);
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Type", "application/json; charset=utf-8");
-        if (film == null) {
-            return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
-        }
-        
-        Collection<Actor> collection = filmActorService.getActors(film);
-        
-        WebPaginationHelper pagination = appFactory.createPaginationHelper();
-        pagination.configure(collection);
-        
-        return new ResponseEntity<String>(pagination.wrapResponse(Actor.toJsonArray(collection)), headers, HttpStatus.OK);
+    public ResponseEntity<String> showActorsJson(
+	    @PathVariable("filmId") Short filmId) {
+	Film film = filmService.findFilm(filmId);
+	HttpHeaders headers = new HttpHeaders();
+	headers.add("Content-Type", "application/json; charset=utf-8");
+	if (film == null) {
+	    return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
+	}
+
+	Collection<Actor> collection = filmActorService.getActors(film);
+
+	WebPaginationHelper pagination = appFactory.createPaginationHelper();
+	pagination.configure(collection);
+
+	return new ResponseEntity<String>(pagination.wrapResponse(Actor
+		.toJsonArray(collection)), headers, HttpStatus.OK);
     }
-    
-    
+
     @RequestMapping(value = "/{filmId}/inventories", method = RequestMethod.GET, headers = "Accept=application/json")
     @ResponseBody
-    public ResponseEntity<String> showInventoriesJson(@PathVariable("filmId") Short filmId) {
-        Film film = filmService.findFilm(filmId);
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Type", "application/json; charset=utf-8");
-        if (film == null) {
-            return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
-        }
-        
-        //TODO
-        
-        return new ResponseEntity<String>(film.toJson(), headers, HttpStatus.OK);
+    public ResponseEntity<String> showInventoriesJson(
+	    @PathVariable("filmId") Short filmId) {
+	Film film = filmService.findFilm(filmId);
+	HttpHeaders headers = new HttpHeaders();
+	headers.add("Content-Type", "application/json; charset=utf-8");
+	if (film == null) {
+	    return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
+	}
+
+	// TODO
+
+	return new ResponseEntity<String>(film.toJson(), headers, HttpStatus.OK);
     }
 }

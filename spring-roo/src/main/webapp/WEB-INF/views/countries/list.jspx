@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <page:list id="pl_net_eyelock_sakila_domain_Country" items="${countrys}" z="8QTyBSjI4QbQ8DvbDL+PCRps0aI=">
-        <table:table data="${countrys}" id="l_net_eyelock_sakila_domain_Country" path="/countries" typeIdFieldName="countryId" z="ketOxDNjiZjHJxKsSzu+RwASoq4=">
-            <table:column id="c_net_eyelock_sakila_domain_Country_country" property="country" z="NvzJypFMaLoobSzXJI3m7Hymg0c="/>
-            <table:column calendar="true" dateTimePattern="${country_lastupdate_date_format}" id="c_net_eyelock_sakila_domain_Country_lastUpdate" property="lastUpdate" z="M679TXh/8O3x9xw1T2cOVrabSp8="/>
-        </table:table>
-    </page:list>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form"
+	xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<page:list id="pl_net_eyelock_sakila_domain_Country"
+		items="${countrys}" z="8QTyBSjI4QbQ8DvbDL+PCRps0aI=">
+		<table:table data="${countrys}"
+			id="l_net_eyelock_sakila_domain_Country" path="/countries"
+			typeIdFieldName="countryId" z="ketOxDNjiZjHJxKsSzu+RwASoq4=">
+			<table:column id="c_net_eyelock_sakila_domain_Country_country"
+				property="country" z="NvzJypFMaLoobSzXJI3m7Hymg0c=" />
+			<table:column calendar="true"
+				dateTimePattern="${country_lastupdate_date_format}"
+				id="c_net_eyelock_sakila_domain_Country_lastUpdate"
+				property="lastUpdate" z="M679TXh/8O3x9xw1T2cOVrabSp8=" />
+		</table:table>
+	</page:list>
 </div>

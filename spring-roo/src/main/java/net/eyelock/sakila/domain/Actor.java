@@ -1,4 +1,5 @@
 package net.eyelock.sakila.domain;
+
 import java.util.Calendar;
 import java.util.Collection;
 import net.eyelock.sakila.helpers.FlexJsonDateTransformer;
@@ -17,18 +18,24 @@ import flexjson.JSONSerializer;
 public class Actor {
 
     public Short getId() {
-        return getActorId();
+	return getActorId();
     }
 
     public static String toJsonArray(Collection<Actor> collection) {
-        return new JSONSerializer().transform(new FlexJsonDateTransformer(), Calendar.class).exclude("*.id").serialize(collection);
+	return new JSONSerializer()
+		.transform(new FlexJsonDateTransformer(), Calendar.class)
+		.exclude("*.id").serialize(collection);
     }
 
     public String toJson(String[] fields) {
-        return new JSONSerializer().include(fields).transform(new FlexJsonDateTransformer(), Calendar.class).exclude("*.class").serialize(this);
+	return new JSONSerializer().include(fields)
+		.transform(new FlexJsonDateTransformer(), Calendar.class)
+		.exclude("*.class").serialize(this);
     }
 
     public String toJson() {
-        return new JSONSerializer().transform(new FlexJsonDateTransformer(), Calendar.class).exclude("*.class").serialize(this);
+	return new JSONSerializer()
+		.transform(new FlexJsonDateTransformer(), Calendar.class)
+		.exclude("*.class").serialize(this);
     }
 }
