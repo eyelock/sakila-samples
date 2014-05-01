@@ -21,4 +21,6 @@ public interface CustomerService {
     Page<Customer> findAll(Pageable createPageable);
 
     Sort getDefaultSort();
+
+    Collection<Customer> findByStore(Store store, Sort defaultSort);
 }

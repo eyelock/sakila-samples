@@ -27,6 +27,11 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    public Collection<Customer> findByStore(Store store, Sort sort) {
+	return customerRepository.findByStoreId(store, sort);
+    }
+
+    @Override
     public Page<Customer> findByStore(Store store, Pageable pageable) {
 	return customerRepository.findByStoreId(store, pageable);
     }

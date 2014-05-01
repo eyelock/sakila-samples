@@ -73,9 +73,11 @@ public class StoreController {
 	    return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
 	}
 
-	Collection<Customer> collection = customerService.findByStore(store);
+	Collection<Customer> collection = customerService.findByStore(store,
+		customerService.getDefaultSort());
 
 	WebPaginationHelper pagination = appFactory.createPaginationHelper();
+	pagination.setSort(customerService.getDefaultSort());
 	pagination.configure("" + collection.size(), "" + 1);
 	pagination.setTotalNoRecords((long) collection.size());
 
@@ -99,6 +101,7 @@ public class StoreController {
 	}
 
 	WebPaginationHelper pagination = appFactory.createPaginationHelper();
+	pagination.setSort(customerService.getDefaultSort());
 	pagination.configure(pageSize, pageNumber);
 
 	Page<Customer> page = customerService.findByStore(store,
