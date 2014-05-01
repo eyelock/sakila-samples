@@ -38,6 +38,7 @@ public class CategoryController {
     @RequestMapping(headers = "Accept=application/json")
     @ResponseBody
     public ResponseEntity<String> listJson() {
+
 	HttpHeaders headers = new HttpHeaders();
 	headers.add("Content-Type", "application/json; charset=utf-8");
 
@@ -55,9 +56,12 @@ public class CategoryController {
     @ResponseBody
     public ResponseEntity<String> showFilmsJson(
 	    @PathVariable("categoryId") Short categoryId) {
+
 	Category category = categoryService.findCategory(categoryId);
+
 	HttpHeaders headers = new HttpHeaders();
 	headers.add("Content-Type", "application/json; charset=utf-8");
+
 	if (category == null) {
 	    return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
 	}

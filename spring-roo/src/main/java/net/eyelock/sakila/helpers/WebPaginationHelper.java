@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 
 public class WebPaginationHelper {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -24,6 +25,8 @@ public class WebPaginationHelper {
     private Long totalNoRecords;
 
     private AppConfig appConfig;
+
+    private Sort sort;
 
     public WebPaginationHelper() {
 	converted = false;
@@ -145,8 +148,15 @@ public class WebPaginationHelper {
     }
 
     public Pageable createPageable() {
-	PageRequest pageRequest = new PageRequest(getPageNumber(),
-		getPageSize());
+	PageRequest pageRequest = null;
+
+	if (sort == null) {
+	    pageRequest = new PageRequest(getPageNumber(), getPageSize());
+	} else {
+	    pageRequest = new PageRequest(getPageNumber(), getPageSize(),
+		    getSort());
+	}
+
 	return pageRequest;
     }
 
@@ -159,5 +169,13 @@ public class WebPaginationHelper {
 	}
 
 	return collection;
+    }
+
+    public Sort getSort() {
+	return sort;
+    }
+
+    public void setSort(Sort sort) {
+	this.sort = sort;
     }
 }

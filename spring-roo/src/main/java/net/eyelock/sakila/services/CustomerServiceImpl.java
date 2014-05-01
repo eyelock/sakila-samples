@@ -9,6 +9,7 @@ import net.eyelock.sakila.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 
 public class CustomerServiceImpl implements CustomerService {
 
@@ -33,5 +34,11 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public Page<Customer> findAll(Pageable pageable) {
 	return customerRepository.findAll(pageable);
+    }
+
+    @Override
+    public Sort getDefaultSort() {
+	return new Sort(new Sort.Order(Sort.Direction.ASC, "lastName"),
+		new Sort.Order(Sort.Direction.ASC, "firstName"));
     }
 }

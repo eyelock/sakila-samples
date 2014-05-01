@@ -46,6 +46,7 @@ public class CustomerController {
 
 	WebPaginationHelper pagination = appFactory.createPaginationHelper();
 	pagination.setTotalNoRecords((long) result.size());
+	pagination.setSort(customerService.getDefaultSort());
 	pagination.configure("" + result.size(), "" + 1);
 
 	return new ResponseEntity<String>(pagination.wrapResponse(Customer
@@ -62,6 +63,7 @@ public class CustomerController {
 	headers.add("Content-Type", "application/json; charset=utf-8");
 
 	WebPaginationHelper pagination = appFactory.createPaginationHelper();
+	pagination.setSort(customerService.getDefaultSort());
 	pagination.configure(pageSize, pageNumber);
 
 	Page<Customer> page = customerService.findAll(pagination
@@ -80,9 +82,12 @@ public class CustomerController {
 	    @PathVariable("customerId") Short customerId,
 	    @RequestParam(value = "pageSize", required = false) String pageSize,
 	    @RequestParam(value = "pageNumber", required = false) String pageNumber) {
+
 	Customer customer = customerService.findCustomer(customerId);
+
 	HttpHeaders headers = new HttpHeaders();
 	headers.add("Content-Type", "application/json; charset=utf-8");
+
 	if (customer == null) {
 	    return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
 	}
@@ -103,9 +108,12 @@ public class CustomerController {
 	    @PathVariable("storeId") Short storeId,
 	    @RequestParam(value = "pageSize", required = false) String pageSize,
 	    @RequestParam(value = "pageNumber", required = false) String pageNumber) {
+
 	Store store = storeService.findStore(storeId);
+
 	HttpHeaders headers = new HttpHeaders();
 	headers.add("Content-Type", "application/json; charset=utf-8");
+
 	if (store == null) {
 	    return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
 	}
