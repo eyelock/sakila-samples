@@ -48,6 +48,7 @@ public class FilmController {
 	headers.add("Content-Type", "application/json; charset=utf-8");
 
 	WebPaginationHelper pagination = appFactory.createPaginationHelper();
+	pagination.setSort(filmService.getDefaultSort());
 	pagination.setTotalNoRecords(filmService.countAllFilms());
 	pagination.configure(pageSize, pageNumber);
 
@@ -66,6 +67,7 @@ public class FilmController {
 	headers.add("Content-Type", "application/json; charset=utf-8");
 
 	WebPaginationHelper pagination = appFactory.createPaginationHelper();
+	pagination.setSort(filmService.getDefaultSort());
 	pagination.configure(pageSize, pageNumber);
 
 	Page<Film> page = filmService.findAll(pagination.createPageable());
