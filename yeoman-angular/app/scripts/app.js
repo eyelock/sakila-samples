@@ -136,6 +136,20 @@ angular
       templateUrl: 'views/partials/customers-table.html'
     };  
   })
+  .directive('sakilaRentalsTable', function() {
+    return {
+      scope: {
+          items: '=sakilaRentalsTable',
+          onPaginate: '&'
+      },
+      link: function(scope, element, attrs) {
+        //TODO this is bad practice reaching out to parent scope, but can't currently get the method reference passing through the isolated scopes
+        scope.onPaginate = scope.$parent.onPaginate;
+      },
+      restrict: 'EA',
+      templateUrl: 'views/partials/rentals-table.html'
+    };  
+  })
   .directive('sakilaStoreJumbotron', function() {
     return {
       scope: {

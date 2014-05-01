@@ -16,6 +16,7 @@ import net.eyelock.sakila.services.InventoryService;
 import net.eyelock.sakila.services.StoreService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -51,20 +52,43 @@ public class RentalController {
 
     @RequestMapping(headers = "Accept=application/json")
     @ResponseBody
-    public ResponseEntity<String> listJson(
-	    @RequestParam(value = "pageSize", required = false) String pageSize,
-	    @RequestParam(value = "pageNumber", required = false) String pageNumber) {
+    public ResponseEntity<String> listJson() {
+
 	HttpHeaders headers = new HttpHeaders();
 	headers.add("Content-Type", "application/json; charset=utf-8");
 
 	WebPaginationHelper pagination = appFactory.createPaginationHelper();
 	pagination.setTotalNoRecords(rentalService.countAllRentals());
-	pagination.configure(pageSize, pageNumber);
 
-	List<Rental> result = rentalService.findRentalEntries(
-		pagination.getFirstResult(), pagination.getMaxResults());
+	List<Rental> result = rentalService.findAllRentals();
+
+	pagination.configure(result);
+
 	return new ResponseEntity<String>(pagination.wrapResponse(Rental
 		.toJsonArray(result)), headers, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/page/{pageNumber}", method = RequestMethod.GET, headers = "Accept=application/json")
+    @ResponseBody
+    public ResponseEntity<String> listPagedJson(
+	    @RequestParam(value = "pageSize", required = false) String pageSize,
+	    @PathVariable("pageNumber") String pageNumber) {
+
+	HttpHeaders headers = new HttpHeaders();
+	headers.add("Content-Type", "application/json; charset=utf-8");
+
+	WebPaginationHelper pagination = appFactory.createPaginationHelper();
+	pagination.setSort(rentalService.getDefaultSort());
+	pagination.configure(pageSize, pageNumber);
+
+	Page<Rental> page = rentalService.findRentals(pagination
+		.createPageable());
+
+	pagination.setTotalNoRecords(page.getTotalElements());
+
+	return new ResponseEntity<String>(pagination.wrapResponse(Rental
+		.toJsonArray(pagination.toCollection(page))), headers,
+		HttpStatus.OK);
     }
 
     @RequestMapping(value = "/stores/{storeId}", method = RequestMethod.GET, headers = "Accept=application/json")
