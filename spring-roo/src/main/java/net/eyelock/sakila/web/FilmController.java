@@ -12,6 +12,7 @@ import net.eyelock.sakila.services.FilmActorService;
 import net.eyelock.sakila.services.FilmCategoryService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -50,11 +51,29 @@ public class FilmController {
 	pagination.setTotalNoRecords(filmService.countAllFilms());
 	pagination.configure(pageSize, pageNumber);
 
-	List<Film> result = filmService.findFilmEntries(
-		pagination.getFirstResult(), pagination.getMaxResults());
+	List<Film> results = filmService.findAllFilms();
 
 	return new ResponseEntity<String>(pagination.wrapResponse(Film
-		.toJsonArray(result)), headers, HttpStatus.OK);
+		.toJsonArray(results)), headers, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/page/{pageNumber}", headers = "Accept=application/json")
+    @ResponseBody
+    public ResponseEntity<String> listPagedJson(
+	    @PathVariable(value = "pageNumber") String pageNumber,
+	    @RequestParam(value = "pageSize", required = false) String pageSize) {
+	HttpHeaders headers = new HttpHeaders();
+	headers.add("Content-Type", "application/json; charset=utf-8");
+
+	WebPaginationHelper pagination = appFactory.createPaginationHelper();
+	pagination.configure(pageSize, pageNumber);
+
+	Page<Film> page = filmService.findAll(pagination.createPageable());
+	pagination.setTotalNoRecords(page.getTotalElements());
+
+	return new ResponseEntity<String>(pagination.wrapResponse(Film
+		.toJsonArray(pagination.toCollection(page))), headers,
+		HttpStatus.OK);
     }
 
     @RequestMapping(value = "/{filmId}/categories", method = RequestMethod.GET, headers = "Accept=application/json")

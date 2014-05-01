@@ -108,11 +108,15 @@ angular
       });
   })
   .constant('SERVICE_BASE_URL', 'http://localhost:8080/sakila')
-  .directive('sakilaFilmsTable', function() {
+  .directive('sakilaFilmsTable', function() {      
     return {
       scope: {
           items: '=sakilaFilmsTable',
-          action: '&onPaginate'
+          onPaginate: '&'
+      },
+      link: function(scope, element, attrs) {
+        //TODO this is bad practice reaching out to parent scope, but can't currently get the method reference passing through the isolated scopes
+        scope.onPaginate = scope.$parent.onPaginate;
       },
       restrict: 'EA',
       templateUrl: 'views/partials/films-table.html'
@@ -121,7 +125,12 @@ angular
   .directive('sakilaCustomersTable', function() {
     return {
       scope: {
-          items: '=sakilaCustomersTable'
+          items: '=sakilaCustomersTable',
+          onPaginate: '&'
+      },
+      link: function(scope, element, attrs) {
+        //TODO this is bad practice reaching out to parent scope, but can't currently get the method reference passing through the isolated scopes
+        scope.onPaginate = scope.$parent.onPaginate;
       },
       restrict: 'EA',
       templateUrl: 'views/partials/customers-table.html'

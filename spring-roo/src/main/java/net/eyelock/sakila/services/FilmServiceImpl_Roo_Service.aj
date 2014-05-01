@@ -5,9 +5,7 @@ package net.eyelock.sakila.services;
 
 import java.util.List;
 import net.eyelock.sakila.domain.Film;
-import net.eyelock.sakila.repositories.FilmRepository;
 import net.eyelock.sakila.services.FilmServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,9 +14,6 @@ privileged aspect FilmServiceImpl_Roo_Service {
     declare @type: FilmServiceImpl: @Service;
     
     declare @type: FilmServiceImpl: @Transactional;
-    
-    @Autowired
-    FilmRepository FilmServiceImpl.filmRepository;
     
     public long FilmServiceImpl.countAllFilms() {
         return filmRepository.count();

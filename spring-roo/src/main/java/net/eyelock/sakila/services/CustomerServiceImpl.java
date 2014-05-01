@@ -7,6 +7,8 @@ import net.eyelock.sakila.domain.Store;
 import net.eyelock.sakila.repositories.CustomerRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public class CustomerServiceImpl implements CustomerService {
 
@@ -21,5 +23,15 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public Collection<Customer> findByStore(Store store) {
 	return customerRepository.findByStoreId(store);
+    }
+
+    @Override
+    public Page<Customer> findByStore(Store store, Pageable pageable) {
+	return customerRepository.findByStoreId(store, pageable);
+    }
+
+    @Override
+    public Page<Customer> findAll(Pageable pageable) {
+	return customerRepository.findAll(pageable);
     }
 }

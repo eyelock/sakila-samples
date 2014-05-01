@@ -1,10 +1,20 @@
 package net.eyelock.sakila.helpers;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 
 import net.eyelock.sakila.AppConfig;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+
 public class WebPaginationHelper {
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
     private Integer pageSize;
 
     private Integer pageNumber;
@@ -23,6 +33,10 @@ public class WebPaginationHelper {
 	return appConfig;
     }
 
+    public boolean isValid() {
+	return pageSize != null && pageNumber != null;
+    }
+
     public void setAppConfig(AppConfig appConfig) {
 	this.appConfig = appConfig;
     }
@@ -31,6 +45,7 @@ public class WebPaginationHelper {
 	setTotalNoRecords(new Long(collection.size()));
 	setPageNumber(1);
 	setPageSize(collection.size());
+	converted = true;
     }
 
     public void configure(String pageSize, String pageNumber) {
@@ -38,16 +53,18 @@ public class WebPaginationHelper {
 	Integer iPageNumber = null;
 
 	try {
-	    iPageSize = Integer.parseInt(pageSize);
 	    iPageNumber = Integer.parseInt(pageNumber);
-	    converted = true;
+	    setPageNumber(iPageNumber);
 	} catch (NumberFormatException e) {
 	    converted = false;
 	}
 
-	if (converted) {
-	    setPageNumber(iPageNumber);
+	try {
+	    iPageSize = Integer.parseInt(pageSize);
 	    setPageSize(iPageSize);
+
+	} catch (NumberFormatException e) {
+	    setPageSize(appConfig.getDefaultPageSize());
 	}
     }
 
@@ -71,15 +88,28 @@ public class WebPaginationHelper {
 	return getPageSize();
     }
 
+    public Integer getPageCount() {
+	return (int) Math.ceil(getTotalNoRecords() / getPageSize());
+    }
+
     public String wrapResponse(String response) {
+
 	StringBuffer wrappedResponse = new StringBuffer();
-	wrappedResponse.append("{");
-	wrappedResponse.append("\"pageSize\":" + getPageSize() + ",");
-	wrappedResponse.append("\"pageNumber\":" + getPageNumber() + ",");
-	wrappedResponse.append("\"totalCount\":" + getTotalNoRecords() + ",");
-	wrappedResponse.append("\"" + appConfig.getCollectionName() + "\": "
-		+ response + "");
-	wrappedResponse.append("}");
+
+	try {
+	    wrappedResponse.append("{");
+	    wrappedResponse.append("\"pageSize\":" + getPageSize() + ",");
+	    wrappedResponse.append("\"pageNumber\":" + getPageNumber() + ",");
+	    wrappedResponse.append("\"pageCount\":" + getPageCount() + ",");
+	    wrappedResponse.append("\"totalCount\":" + getTotalNoRecords()
+		    + ",");
+	    wrappedResponse.append("\"" + appConfig.getCollectionName()
+		    + "\": " + response + "");
+	    wrappedResponse.append("}");
+	} catch (Exception e) {
+	    logger.error("problem building wrapped response: {}",
+		    e.getMessage());
+	}
 
 	return wrappedResponse.toString();
     }
@@ -112,5 +142,22 @@ public class WebPaginationHelper {
 
     public void setTotalNoRecords(Long totalNoRecords) {
 	this.totalNoRecords = totalNoRecords;
+    }
+
+    public Pageable createPageable() {
+	PageRequest pageRequest = new PageRequest(getPageNumber(),
+		getPageSize());
+	return pageRequest;
+    }
+
+    public <T> Collection<T> toCollection(Page<T> page) {
+	Collection<T> collection = new ArrayList<T>();
+	Iterator<T> iterator = page.iterator();
+
+	while (iterator.hasNext()) {
+	    collection.add(iterator.next());
+	}
+
+	return collection;
     }
 }

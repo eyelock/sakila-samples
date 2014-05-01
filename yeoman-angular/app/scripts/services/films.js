@@ -9,6 +9,14 @@ angular.module('yeomanAngularApp')
 
 
 angular.module('yeomanAngularApp')
+  .service('FilmsPaged', ['$resource', 'SERVICE_BASE_URL', function FilmsPaged($resource, baseURL) {
+	  return $resource(baseURL + '/films/page/:pageNumber', {}, {
+	      query: {method:'GET', isArray:false}
+	    });
+  }]);
+
+
+angular.module('yeomanAngularApp')
   .service('Film', ['$resource', 'SERVICE_BASE_URL', function Film($resource, baseURL) {
  	  return $resource(baseURL + '/films/:filmId', {}, {
         query: {method:'GET', isArray:false}   

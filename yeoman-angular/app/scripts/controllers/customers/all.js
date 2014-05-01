@@ -1,10 +1,11 @@
 'use strict';
 
 angular.module('yeomanAngularApp')
-  .controller('CustomersAllCtrl', ['$scope', 'Customers', function ($scope, Customers) {
-	  $scope.customers = Customers.query();
+  .controller('CustomersAllCtrl', ['$scope', 'CustomersPaged', function ($scope, CustomersPaged) {
+	  $scope.customers = CustomersPaged.query({pageNumber: 1});
+      var pageSize = $scope.customers.pageSize;
       
-      $scope.paginateResults = function(pageNumber) {
-        alert(pageNumber);  
+      $scope.onPaginate = function(pageNumber) {
+          $scope.customers = CustomersPaged.query({pageSize: pageSize, pageNumber: pageNumber});
       };
   }]);

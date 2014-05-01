@@ -5,9 +5,7 @@ package net.eyelock.sakila.services;
 
 import java.util.List;
 import net.eyelock.sakila.domain.Actor;
-import net.eyelock.sakila.repositories.ActorRepository;
 import net.eyelock.sakila.services.ActorServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,9 +14,6 @@ privileged aspect ActorServiceImpl_Roo_Service {
     declare @type: ActorServiceImpl: @Service;
     
     declare @type: ActorServiceImpl: @Transactional;
-    
-    @Autowired
-    ActorRepository ActorServiceImpl.actorRepository;
     
     public long ActorServiceImpl.countAllActors() {
         return actorRepository.count();

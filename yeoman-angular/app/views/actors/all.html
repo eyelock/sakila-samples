@@ -6,4 +6,6 @@
           <a ng-href="#/actors/{{actor.actorId}}">{{actor.firstName}} {{actor.lastName}}</a>
         </li>
     </ul>
+    
+    <pagination total-items="actors.totalCount" items-per-page="actors.pageSize" page="actors.pageNumber" max-size="5" boundary-links="true" on-select-page="onPaginate(page)"></pagination>
 </div>

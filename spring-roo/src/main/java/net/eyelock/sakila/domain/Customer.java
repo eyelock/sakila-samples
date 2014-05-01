@@ -1,5 +1,4 @@
 package net.eyelock.sakila.domain;
-
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Collections;
@@ -23,59 +22,53 @@ import flexjson.JSONSerializer;
 public class Customer implements UserDetails {
 
     public Short getId() {
-	return getCustomerId();
+        return getCustomerId();
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-	return Collections.singleton(SakilaGrantedAuthority.CUSTOMER);
+        return Collections.singleton(SakilaGrantedAuthority.CUSTOMER);
     }
 
     @Override
     public String getPassword() {
-	return getEmail();
+        return getEmail();
     }
 
     @Override
     public String getUsername() {
-	return getEmail();
+        return getEmail();
     }
 
     @Override
     public boolean isAccountNonExpired() {
-	return isActive();
+        return isActive();
     }
 
     @Override
     public boolean isAccountNonLocked() {
-	return isActive();
+        return isActive();
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-	return isActive();
+        return isActive();
     }
 
     @Override
     public boolean isEnabled() {
-	return isActive();
+        return isActive();
     }
 
     public static String toJsonArray(Collection<Customer> collection) {
-	return new JSONSerializer()
-		.transform(new FlexJsonDateTransformer(), Calendar.class)
-		.exclude("*.id").serialize(collection);
+        return new JSONSerializer().transform(new FlexJsonDateTransformer(), Calendar.class).exclude("*.id").serialize(collection);
     }
 
     public String toJson(String[] fields) {
-	return new JSONSerializer().include(fields)
-		.transform(new FlexJsonDateTransformer(), Calendar.class)
-		.exclude("*.class").serialize(this);
+        return new JSONSerializer().include(fields).transform(new FlexJsonDateTransformer(), Calendar.class).exclude("*.class").serialize(this);
     }
 
     public String toJson() {
-	return new JSONSerializer()
-		.transform(new FlexJsonDateTransformer(), Calendar.class)
-		.exclude("*.class").serialize(this);
+        return new JSONSerializer().transform(new FlexJsonDateTransformer(), Calendar.class).exclude("*.class").serialize(this);
     }
 }

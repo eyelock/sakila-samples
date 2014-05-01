@@ -8,6 +8,13 @@ angular.module('yeomanAngularApp')
   }]);
 
 angular.module('yeomanAngularApp')
+  .service('CustomersPaged', ['$resource', 'SERVICE_BASE_URL', function CustomersPaged($resource, baseURL) {
+	  return $resource(baseURL + '/customers/page/:pageNumber', {}, {
+	      query: {method:'GET', isArray:false}
+	    });
+  }]);
+
+angular.module('yeomanAngularApp')
   .service('Customer', ['$resource', 'SERVICE_BASE_URL', function Customer($resource, baseURL) {
  	  return $resource(baseURL + '/customers/:customerId', {}, {
         query: {method:'GET', isArray:false}   
