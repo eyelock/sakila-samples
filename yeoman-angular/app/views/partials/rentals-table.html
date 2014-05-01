@@ -1,0 +1,29 @@
+<table>
+    <thead>
+    <tr>
+        <th>Rental Date</th>
+        <th>Film</th>
+        <th>Customer</th>
+        <th>Store</th>
+        <th>Return Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in items.collection">
+        <td><a ng-href="#/rentals/{{item.rentalId}}">{{item.rentalDate}}</a></td>
+        <td><a ng-href="#/films/{{item.inventoryId.filmId.filmId}}">{{item.inventoryId.filmId.title}}</a></td>
+        <td><a ng-href="#/customers/{{item.customerId.customerId}}">{{item.customerId.lastName}}, {{item.customerId.firstName}}</a></td>
+        <td><a ng-href="#/stores/{{item.inventoryId.storeId.storeId}}">{{item.inventoryId.storeId.addressId.cityId.city}}, {{item.inventoryId.storeId.addressId.cityId.countryId.country}}</a></td>
+        <td>{{item.returnDate}}</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr ng-if="items.pageCount != 1">
+        <td colspan="4">
+            <div>
+                <pagination total-items="items.totalCount" page="items.pageNumber" max-size="5" boundary-links="true" on-select-page="onPaginate(page)"></pagination>
+            </div>
+        </td>    
+    </tr>
+    </tfoot>
+</table>
