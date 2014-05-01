@@ -45,6 +45,7 @@ public class CategoryController {
 	List<Category> result = categoryService.findAllCategorys();
 
 	WebPaginationHelper pagination = appFactory.createPaginationHelper();
+	pagination.setSort(categoryService.getDefaultSort());
 	pagination.setTotalNoRecords((long) result.size());
 	pagination.configure("" + result.size(), "" + 1);
 

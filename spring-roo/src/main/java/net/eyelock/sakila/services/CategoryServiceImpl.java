@@ -1,14 +1,10 @@
 package net.eyelock.sakila.services;
 
-import java.util.Collection;
-
-import org.springframework.beans.factory.annotation.Autowired;
-
-import net.eyelock.sakila.domain.Category;
-import net.eyelock.sakila.domain.Film;
-import net.eyelock.sakila.domain.FilmCategory;
-import net.eyelock.sakila.repositories.CategoryRepository;
-import net.eyelock.sakila.repositories.FilmCategoryRepository;
+import org.springframework.data.domain.Sort;
 
 public class CategoryServiceImpl implements CategoryService {
+    @Override
+    public Sort getDefaultSort() {
+	return new Sort(new Sort.Order(Sort.Direction.ASC, "name"));
+    }
 }

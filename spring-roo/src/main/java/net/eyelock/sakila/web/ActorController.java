@@ -46,6 +46,7 @@ public class ActorController {
 	List<Actor> result = actorService.findAllActors();
 
 	WebPaginationHelper pagination = appFactory.createPaginationHelper();
+	pagination.setSort(actorService.getDefaultSort());
 	pagination.configure(result);
 
 	return new ResponseEntity<String>(pagination.wrapResponse(Actor
@@ -62,7 +63,7 @@ public class ActorController {
 	headers.add("Content-Type", "application/json; charset=utf-8");
 
 	WebPaginationHelper pagination = appFactory.createPaginationHelper();
-
+	pagination.setSort(actorService.getDefaultSort());
 	pagination.configure(pageSize, pageNumber);
 
 	Page<Actor> page = actorService.findAll(pagination.createPageable());
