@@ -20,3 +20,10 @@ angular.module('yeomanAngularApp')
         query: {method:'GET', isArray:false}   
       });
   }]);
+
+angular.module('yeomanAngularApp')
+  .service('CategoryFilmsPaged', ['$resource', 'SERVICE_BASE_URL', function CategoryFilmsPaged($resource, baseURL) {
+ 	  return $resource(baseURL + '/categories/:categoryId/films/page/:pageNumber', {}, {
+        query: {method:'GET', isArray:false}   
+      });
+  }]);

@@ -10,6 +10,7 @@ import net.eyelock.sakila.helpers.WebPaginationHelper;
 import net.eyelock.sakila.services.FilmCategoryService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -36,18 +37,15 @@ public class CategoryController {
 
     @RequestMapping(headers = "Accept=application/json")
     @ResponseBody
-    public ResponseEntity<String> listJson(
-	    @RequestParam(value = "pageSize", required = false) String pageSize,
-	    @RequestParam(value = "pageNumber", required = false) String pageNumber) {
+    public ResponseEntity<String> listJson() {
 	HttpHeaders headers = new HttpHeaders();
 	headers.add("Content-Type", "application/json; charset=utf-8");
 
-	WebPaginationHelper pagination = appFactory.createPaginationHelper();
-	pagination.setTotalNoRecords(categoryService.countAllCategorys());
-	pagination.configure(pageSize, pageNumber);
+	List<Category> result = categoryService.findAllCategorys();
 
-	List<Category> result = categoryService.findCategoryEntries(
-		pagination.getFirstResult(), pagination.getMaxResults());
+	WebPaginationHelper pagination = appFactory.createPaginationHelper();
+	pagination.setTotalNoRecords((long) result.size());
+	pagination.configure("" + result.size(), "" + 1);
 
 	return new ResponseEntity<String>(pagination.wrapResponse(Category
 		.toJsonArray(result)), headers, HttpStatus.OK);
@@ -55,7 +53,7 @@ public class CategoryController {
 
     @RequestMapping(value = "/{categoryId}/films", method = RequestMethod.GET, headers = "Accept=application/json")
     @ResponseBody
-    public ResponseEntity<String> showCategoriesJson(
+    public ResponseEntity<String> showFilmsJson(
 	    @PathVariable("categoryId") Short categoryId) {
 	Category category = categoryService.findCategory(categoryId);
 	HttpHeaders headers = new HttpHeaders();
@@ -71,5 +69,34 @@ public class CategoryController {
 
 	return new ResponseEntity<String>(pagination.wrapResponse(Film
 		.toJsonArray(collection)), headers, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/{categoryId}/films/page/{pageNumber}", method = RequestMethod.GET, headers = "Accept=application/json")
+    @ResponseBody
+    public ResponseEntity<String> showFilmsJson(
+	    @PathVariable("categoryId") Short categoryId,
+	    @PathVariable("pageNumber") String pageNumber,
+	    @RequestParam(value = "pageSize", required = false) String pageSize) {
+
+	Category category = categoryService.findCategory(categoryId);
+
+	HttpHeaders headers = new HttpHeaders();
+	headers.add("Content-Type", "application/json; charset=utf-8");
+
+	if (category == null) {
+	    return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
+	}
+
+	WebPaginationHelper pagination = appFactory.createPaginationHelper();
+	pagination.configure(pageSize, pageNumber);
+
+	Page<Film> page = filmCategoryService.getFilms(category,
+		pagination.createPageable());
+
+	pagination.setTotalNoRecords(page.getTotalElements());
+
+	return new ResponseEntity<String>(pagination.wrapResponse(Film
+		.toJsonArray(pagination.toCollection(page))), headers,
+		HttpStatus.OK);
     }
 }
