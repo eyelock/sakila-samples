@@ -71,6 +71,10 @@ angular
         templateUrl: 'views/stores/customers.html',
         controller: 'StoresCustomersCtrl'
       })
+      .when('/stores/:storeId/rentals', {
+        templateUrl: 'views/stores/rentals.html',
+        controller: 'StoreRentalsCtrl'
+      })
       .when('/rentals/all', {
         templateUrl: 'views/rentals/all.html',
         controller: 'RentalsAllCtrl'

@@ -27,3 +27,10 @@ angular.module('yeomanAngularApp')
         query: {method:'GET', isArray:false}   
       });
   }]);
+
+angular.module('yeomanAngularApp')
+  .service('CustomerRentalsPaged', ['$resource', 'SERVICE_BASE_URL', function CustomerRentalsPaged($resource, baseURL) {
+ 	  return $resource(baseURL + '/customers/:customerId/rentals/page/:pageNumber', {}, {
+        query: {method:'GET', isArray:false}   
+      });
+  }]);

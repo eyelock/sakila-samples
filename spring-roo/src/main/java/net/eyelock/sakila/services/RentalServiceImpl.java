@@ -23,8 +23,19 @@ public class RentalServiceImpl implements RentalService {
     }
 
     @Override
+    public Page<Rental> findByStore(Store store, Pageable pageable) {
+	// TODO Need to get the rentals by store
+	return null;
+    }
+
+    @Override
     public Collection<Rental> findByCustomer(Customer customer) {
 	return rentalRepository.findByCustomerId(customer);
+    }
+
+    @Override
+    public Page<Rental> findByCustomer(Customer customer, Pageable pageable) {
+	return rentalRepository.findByCustomerId(customer, pageable);
     }
 
     @Override
@@ -33,8 +44,18 @@ public class RentalServiceImpl implements RentalService {
     }
 
     @Override
+    public Page<Rental> findByStaff(Staff staff, Pageable pageable) {
+	return rentalRepository.findByStaffId(staff, pageable);
+    }
+
+    @Override
     public Collection<Rental> findByInventory(Inventory inventory) {
 	return rentalRepository.findByInventoryId(inventory);
+    }
+
+    @Override
+    public Page<Rental> findByInventory(Inventory inventory, Pageable pageable) {
+	return rentalRepository.findByInventoryId(inventory, pageable);
     }
 
     @Override

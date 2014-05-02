@@ -18,15 +18,23 @@ import org.springframework.roo.addon.layers.service.RooService;
 public interface RentalService {
     Collection<Rental> findByStore(Store store);
 
+    Page<Rental> findByStore(Store store, Pageable pageable);
+
     Collection<Rental> findByCustomer(Customer customer);
+
+    Page<Rental> findByCustomer(Customer customer, Pageable pageable);
 
     Collection<Rental> findByStaff(Staff staff);
 
+    Page<Rental> findByStaff(Staff staff, Pageable pageable);
+
     Collection<Rental> findByInventory(Inventory inventory);
+
+    Page<Rental> findByInventory(Inventory inventory, Pageable pageable);
 
     Collection<Rental> findByFilm(Film film);
 
     Sort getDefaultSort();
 
-    Page<Rental> findRentals(Pageable createPageable);
+    Page<Rental> findRentals(Pageable pageable);
 }

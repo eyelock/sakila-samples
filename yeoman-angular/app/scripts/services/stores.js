@@ -35,3 +35,10 @@ angular.module('yeomanAngularApp')
         query: {method:'GET', isArray:false}   
       });
   }]); 
+
+ angular.module('yeomanAngularApp')
+  .service('StoreRentalsPaged', ['$resource', 'SERVICE_BASE_URL', function StoreRentalsPaged($resource, baseURL) {
+ 	  return $resource(baseURL + '/stores/:storeId/rentals/page/:pageNumber', {}, {
+        query: {method:'GET', isArray:false}   
+      });
+  }]); 

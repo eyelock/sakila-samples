@@ -8,10 +8,12 @@ import java.util.Set;
 import net.eyelock.sakila.AppFactory;
 import net.eyelock.sakila.domain.Customer;
 import net.eyelock.sakila.domain.Film;
+import net.eyelock.sakila.domain.Rental;
 import net.eyelock.sakila.domain.Store;
 import net.eyelock.sakila.helpers.WebPaginationHelper;
 import net.eyelock.sakila.services.CustomerService;
 import net.eyelock.sakila.services.InventoryService;
+import net.eyelock.sakila.services.RentalService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -41,6 +43,9 @@ public class StoreController {
 
     @Autowired
     private InventoryService inventoryService;
+
+    @Autowired
+    private RentalService rentalService;
 
     @RequestMapping(headers = "Accept=application/json")
     @ResponseBody
@@ -138,4 +143,56 @@ public class StoreController {
     }
 
     // TODO Paged Store Films
+
+    @RequestMapping(value = "/{storeId}/rentals", method = RequestMethod.GET, headers = "Accept=application/json")
+    @ResponseBody
+    public ResponseEntity<String> showStoresJson(
+	    @PathVariable("storeId") Short storeId) {
+
+	Store store = storeService.findStore(storeId);
+
+	HttpHeaders headers = new HttpHeaders();
+	headers.add("Content-Type", "application/json; charset=utf-8");
+
+	if (store == null) {
+	    return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
+	}
+
+	Collection<Rental> items = rentalService.findByStore(store);
+
+	WebPaginationHelper pagination = appFactory.createPaginationHelper();
+	pagination.configure("" + items.size(), "" + 1);
+
+	return new ResponseEntity<String>(pagination.wrapResponse(Rental
+		.toJsonArray(items)), headers, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/{storeId}/rentals/page/{pageNumber}", method = RequestMethod.GET, headers = "Accept=application/json")
+    @ResponseBody
+    public ResponseEntity<String> showStoresJson(
+	    @PathVariable("storeId") Short storeId,
+	    @PathVariable("pageNumber") String pageNumber,
+	    @RequestParam(value = "pageSize", required = false) String pageSize) {
+
+	Store store = storeService.findStore(storeId);
+
+	HttpHeaders headers = new HttpHeaders();
+	headers.add("Content-Type", "application/json; charset=utf-8");
+
+	if (store == null) {
+	    return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
+	}
+
+	WebPaginationHelper pagination = appFactory.createPaginationHelper();
+	pagination.configure(pageSize, pageNumber);
+	pagination.setSort(rentalService.getDefaultSort());
+
+	Page<Rental> page = rentalService.findByStore(store,
+		pagination.createPageable());
+	pagination.setTotalNoRecords(pagination.getTotalNoRecords());
+
+	return new ResponseEntity<String>(pagination.wrapResponse(Rental
+		.toJsonArray(pagination.toCollection(page))), headers,
+		HttpStatus.OK);
+    }
 }

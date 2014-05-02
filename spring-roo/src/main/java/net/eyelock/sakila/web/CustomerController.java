@@ -6,7 +6,6 @@ import java.util.List;
 import net.eyelock.sakila.AppFactory;
 import net.eyelock.sakila.domain.Customer;
 import net.eyelock.sakila.domain.Rental;
-import net.eyelock.sakila.domain.Store;
 import net.eyelock.sakila.helpers.WebPaginationHelper;
 import net.eyelock.sakila.services.RentalService;
 
@@ -78,10 +77,30 @@ public class CustomerController {
 
     @RequestMapping(value = "/{customerId}/rentals", method = RequestMethod.GET, headers = "Accept=application/json")
     @ResponseBody
-    public ResponseEntity<String> showRentalsJson(
+    public ResponseEntity<String> showCustomersJson(
+	    @PathVariable("customerId") Short customerId) {
+	Customer customer = customerService.findCustomer(customerId);
+	HttpHeaders headers = new HttpHeaders();
+	headers.add("Content-Type", "application/json; charset=utf-8");
+	if (customer == null) {
+	    return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
+	}
+
+	Collection<Rental> collection = rentalService.findByCustomer(customer);
+
+	WebPaginationHelper pagination = appFactory.createPaginationHelper();
+	pagination.configure(collection);
+
+	return new ResponseEntity<String>(pagination.wrapResponse(Rental
+		.toJsonArray(collection)), headers, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/{customerId}/rentals/page/{pageNumber}", method = RequestMethod.GET, headers = "Accept=application/json")
+    @ResponseBody
+    public ResponseEntity<String> showCustomersJson(
 	    @PathVariable("customerId") Short customerId,
-	    @RequestParam(value = "pageSize", required = false) String pageSize,
-	    @RequestParam(value = "pageNumber", required = false) String pageNumber) {
+	    @PathVariable("pageNumber") String pageNumber,
+	    @RequestParam(value = "pageSize", required = false) String pageSize) {
 
 	Customer customer = customerService.findCustomer(customerId);
 
@@ -92,39 +111,16 @@ public class CustomerController {
 	    return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
 	}
 
-	// TODO This needs paging/sorting
-	Collection<Rental> collection = rentalService.findByCustomer(customer);
-
 	WebPaginationHelper pagination = appFactory.createPaginationHelper();
-	pagination.configure(collection);
+	pagination.configure(pageSize, pageNumber);
+	pagination.setSort(rentalService.getDefaultSort());
+
+	Page<Rental> items = rentalService.findByCustomer(customer,
+		pagination.createPageable());
+	pagination.setTotalNoRecords(items.getTotalElements());
 
 	return new ResponseEntity<String>(pagination.wrapResponse(Rental
-		.toJsonArray(collection)), headers, HttpStatus.OK);
-    }
-
-    @RequestMapping(value = "/stores/{storeId}", method = RequestMethod.GET, headers = "Accept=application/json")
-    @ResponseBody
-    public ResponseEntity<String> showStoresJson(
-	    @PathVariable("storeId") Short storeId,
-	    @RequestParam(value = "pageSize", required = false) String pageSize,
-	    @RequestParam(value = "pageNumber", required = false) String pageNumber) {
-
-	Store store = storeService.findStore(storeId);
-
-	HttpHeaders headers = new HttpHeaders();
-	headers.add("Content-Type", "application/json; charset=utf-8");
-
-	if (store == null) {
-	    return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
-	}
-
-	// TODO This needs paging/sorting
-	Collection<Customer> collection = customerService.findByStore(store);
-
-	WebPaginationHelper pagination = appFactory.createPaginationHelper();
-	pagination.configure(collection);
-
-	return new ResponseEntity<String>(pagination.wrapResponse(Customer
-		.toJsonArray(collection)), headers, HttpStatus.OK);
+		.toJsonArray(pagination.toCollection(items))), headers,
+		HttpStatus.OK);
     }
 }
