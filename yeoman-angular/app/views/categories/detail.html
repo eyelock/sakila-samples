@@ -1,9 +1,8 @@
-<div class="jumbotron">
-    <h1>{{category.name}}</h1>
-</div>
+<div class="container">
+    <div sakila-jumbotron settings='jumbotron'></div>
 
-<div>
-    <h2>Films</h2>
-    <table class="table table-striped" sakila-films-table="films" on-paginate="pageRecords(pageNo)"></table>
+    <div>
+        <h2>Films</h2>
+        <table class="table table-striped" sakila-films-table="films" on-paginate="pageRecords(pageNo)"></table>
+    </div>
 </div>
-

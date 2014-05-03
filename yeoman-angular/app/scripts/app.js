@@ -154,13 +154,13 @@ angular
       templateUrl: 'views/partials/rentals-table.html'
     };  
   })
-  .directive('sakilaStoreJumbotron', function() {
+  .directive('sakilaJumbotron', function() {
     return {
       scope: {
-          item: '=sakilaStoreJumbotron'
+          settings: '='
       },
       restrict: 'EA',
-      templateUrl: 'views/partials/store-jumbotron.html'
+      templateUrl: 'views/partials/jumbotron.html'
     };  
   })
   .directive('sakilaStaffDl', function() {
